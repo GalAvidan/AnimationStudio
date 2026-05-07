@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.DS_Store
+Thumbs.db
+*.log
+output/*.mp4
+output/*.mov
+output/*.webm
+projects/*/out/
+projects/*/dist/
