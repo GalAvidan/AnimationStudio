@@ -8,7 +8,7 @@ Make animation edits precise and reversible.
 
 - Locate the requested change by scene, beat, timestamp, or visible element.
 - If the change alters creative direction, update the spec first.
-- If the change only implements approved direction, update the Remotion project.
+- If the change only implements approved direction, update the animation project.
 - Keep revisions narrow.
 - After a change, summarize what moved, what stayed the same, and how to preview it.
 

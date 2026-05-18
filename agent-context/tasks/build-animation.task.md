@@ -6,12 +6,12 @@ The user has an approved spec and wants a Remotion animation project.
 
 ## Load
 
-- `agent-context/intent/overview.md`
-- `agent-context/intent/conventions.md`
-- `agent-context/skills/remotion-composition.skill.md`
-- `agent-context/skills/motion-easing.skill.md`
-- `agent-context/skills/audio-sync.skill.md`
-- The target spec in `specs/`
+1. Read `project.config.ts` to determine `adapter` and `variants`.
+2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
+3. Load `agent-context/intent/overview.md` and `agent-context/intent/conventions.md`.
+4. Load all skills in `agent-context/skills/core/`.
+5. Load all skills in `agent-context/skills/adapters/<adapter>/` (resolved from registry).
+6. Load the target spec from `projects/<name>/specs/<variant>.spec.md`.
 
 ## Steps
 

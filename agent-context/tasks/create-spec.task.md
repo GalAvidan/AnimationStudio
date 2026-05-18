@@ -8,9 +8,9 @@ The user wants to turn a script into an animation spec.
 
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
-- `agent-context/skills/visual-clarity.skill.md`
-- `agent-context/skills/audio-sync.skill.md`
-- `specs/_templates/animation-spec-template.md`
+- `agent-context/skills/core/visual-clarity.skill.md`
+- `agent-context/skills/core/audio-sync.skill.md`
+- `agent-context/templates/spec.template.md`
 
 ## Steps
 

@@ -8,7 +8,7 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
-- `agent-context/skills/visual-clarity.skill.md`
+- `agent-context/skills/core/visual-clarity.skill.md`
 
 ## Steps
 

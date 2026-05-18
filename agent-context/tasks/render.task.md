@@ -6,8 +6,10 @@ The user wants a video or still export.
 
 ## Load
 
-- `agent-context/skills/remotion-composition.skill.md`
-- The relevant spec in `specs/`
+1. Read `project.config.ts` to determine `adapter` and `variants`.
+2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
+3. Load all skills in `agent-context/skills/adapters/<adapter>/`.
+4. Load the relevant spec from `projects/<name>/specs/<variant>.spec.md`.
 
 ## Steps
 
