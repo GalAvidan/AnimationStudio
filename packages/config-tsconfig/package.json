@@ -1,0 +1,9 @@
+{
+  "name": "@studio/config-tsconfig",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./base.json": "./base.json"
+  }
+}
