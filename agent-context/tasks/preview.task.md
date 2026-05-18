@@ -14,7 +14,7 @@ The user wants to inspect the animation locally.
 
 1. Read `project.config.ts` to confirm the project exists and the adapter.
 2. From the adapter registry, get the `preview cmd` for this adapter.
-3. Run `pnpm --filter ./projects/<name> dev` from the repo root.
+3. Run the `preview cmd` from the adapter registry row, substituting `<name>`, from the repo root.
 4. Report the local preview URL.
 
 ## Ask If Missing

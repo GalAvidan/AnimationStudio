@@ -1,4 +1,4 @@
-export type AdapterName = "remotion";
+export type AdapterName = "remotion" | "motion-canvas";
 
 export interface VideoConfig {
   width: number;

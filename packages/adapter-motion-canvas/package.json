@@ -1,0 +1,28 @@
+{
+  "name": "@studio/adapter-motion-canvas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@studio/adapter-contract": "workspace:*",
+    "@studio/spec-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@studio/config-tsconfig": "workspace:*",
+    "@studio/config-eslint": "workspace:*",
+    "typescript": ">=5.4"
+  }
+}

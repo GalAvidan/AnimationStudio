@@ -17,7 +17,7 @@ The user wants to start a new animation project from scratch.
 | Project name | — | Required. Must be kebab-case. |
 | Short subject | — | Required. One sentence describing what the animation explains. |
 | Variants | `general` | Comma-separated list of variant IDs (e.g. `general,dev`). |
-| Adapter | `remotion` | Must match a row in the adapter registry. |
+| Adapter | `motion-canvas` | Must match a row in the adapter registry. |
 
 ## Validation
 
@@ -28,7 +28,9 @@ The user wants to start a new animation project from scratch.
 ## Steps
 
 1. Validate all inputs per the Validation section above. If any check fails, report the error and stop.
-2. Copy `projects/_template/` to `projects/<name>/`.
+2. Copy the correct template based on adapter:
+   - `remotion` → copy `projects/_template/` to `projects/<name>/`
+   - `motion-canvas` → copy `projects/_template-motion-canvas/` to `projects/<name>/`
 3. In `projects/<name>/project.config.ts`, replace the stub with real values:
    - `slug`: project name
    - `title`: title-cased subject
@@ -50,8 +52,8 @@ After completion, report:
 ```
 Project created: projects/<name>/
 
-Preview:  pnpm --filter ./projects/<name> dev
-Render:   pnpm --filter ./projects/<name> render -- --props=./props/general.json
+Preview:  <preview cmd from adapter registry, with <name> substituted>
+Render:   <render cmd from adapter registry, with <name> and <variant> substituted>
 
 Next steps:
   1. Edit scripts/<variant>.script.md with your narration draft.
