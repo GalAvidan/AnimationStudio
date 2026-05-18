@@ -2,24 +2,33 @@
 
 ## Lifecycle
 
-1. Script: capture the explanation in `scripts/`.
-2. Spec: create a creative direction file in `specs/`.
-3. Build: create or update a Remotion project in `projects/`.
-4. Preview: run Remotion Studio from the project folder.
-5. Render: export video or stills to `output/`.
-6. Revise: change the spec or project based on beat-level feedback.
+1. **Create project:** run `create-project` task → scaffolds `projects/<name>/` from `projects/_template/`.
+2. **Script:** edit `projects/<name>/scripts/<variant>.script.md` or use `create-script` task.
+3. **Spec:** run `create-spec` task → creates `projects/<name>/specs/<variant>.spec.md`.
+4. **Build:** run `build-animation` task → reads `project.config.ts`, loads adapter skills, builds `src/`.
+5. **Preview:** run `pnpm --filter ./projects/<name> dev` or use `preview` task.
+6. **Render:** run `pnpm --filter ./projects/<name> render -- --props=./props/<variant>.json` or use `render` task.
+7. **Revise:** run `revise-animation` task → edits spec or code based on beat-level feedback.
 
 ## Folder Routing
 
 | Request | Load First | Work In | Output |
 |---|---|---|---|
-| Turn idea into script | `agent-context/tasks/create-script.task.md` | `scripts/` | `<project-name>_script.md` |
-| Turn script into spec | `agent-context/tasks/create-spec.task.md` | `specs/` | `<project-name>_spec.md` |
-| Build animation | `agent-context/tasks/build-animation.task.md` | `projects/<project-name>/` | Remotion files |
-| Revise animation | `agent-context/tasks/revise-animation.task.md` | `specs/` and `projects/` | Updated spec/code |
-| Preview | `agent-context/tasks/preview.task.md` | `projects/<project-name>/` | Remotion Studio |
-| Render | `agent-context/tasks/render.task.md` | `projects/<project-name>/` | `output/<project-name>.mp4` |
+| Create new project | `agent-context/tasks/create-project.task.md` | `projects/<name>/` | Scaffolded project |
+| Turn idea into script | `agent-context/tasks/create-script.task.md` | `projects/<name>/scripts/` | `<variant>.script.md` |
+| Turn script into spec | `agent-context/tasks/create-spec.task.md` | `projects/<name>/specs/` | `<variant>.spec.md` |
+| Build animation | `agent-context/tasks/build-animation.task.md` | `projects/<name>/src/` | Animation source files |
+| Revise animation | `agent-context/tasks/revise-animation.task.md` | `projects/<name>/specs/` and `src/` | Updated spec or code |
+| Preview | `agent-context/tasks/preview.task.md` | `projects/<name>/` | Running preview |
+| Render | `agent-context/tasks/render.task.md` | `projects/<name>/` | `output/<variant>.mp4` |
+
+## Adapter Resolution
+
+1. Read `project.config.ts` in the project folder → get `adapter` field.
+2. Look up the `adapter` row in `agent-context/map/adapter-registry.md`.
+3. Load skills from the `skills dir` column.
+4. Use `preview cmd` and `render cmd` from the registry verbatim (substitute `<name>` and `<variant>`).
 
 ## Current Projects
 
-- `projects/explainer-starter/`: minimal Remotion starter used to prove the workflow.
+*(Updated by the `refresh-map` task as projects are added.)*

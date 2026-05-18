@@ -4,8 +4,17 @@ build/
 .DS_Store
 Thumbs.db
 *.log
+
+# Per-project rendered outputs (stills *.png are tracked for review)
+projects/*/output/*.mp4
+projects/*/output/*.mov
+projects/*/output/*.webm
+
+# Legacy root output folder (removed in Plan 1, kept here for safety)
 output/*.mp4
 output/*.mov
 output/*.webm
+
+# Remotion per-project build artifacts
 projects/*/out/
 projects/*/dist/

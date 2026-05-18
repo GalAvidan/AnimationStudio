@@ -10,6 +10,11 @@ Before implementing a request, read:
 - `agent-context/map/workflow.md`
 - `agent-context/intent/conventions.md`
 - The matching task in `agent-context/tasks/`
-- Any skills referenced by that task
+- Core skills from `agent-context/skills/core/`
+- Adapter skills from `agent-context/skills/adapters/<adapter>/` (resolve adapter from `project.config.ts` via `agent-context/map/adapter-registry.md`)
 
-Follow the Script -> Spec -> Build -> Preview -> Render -> Revise workflow. Keep scripts and specs readable by humans, and avoid putting implementation details into specs before the build step derives them.
+Follow the Script → Spec → Build → Preview → Render → Revise workflow.
+
+Every animation project is self-contained under `projects/<name>/`. Do not route work to root `scripts/`, `specs/`, `assets/`, or `output/` — those folders no longer exist.
+
+Use `pnpm` for all commands. Never `npm`, `yarn`, or `npx`.

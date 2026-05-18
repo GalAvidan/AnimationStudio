@@ -6,24 +6,27 @@ The user wants to change an existing animation by beat, timestamp, scene, or vis
 
 ## Load
 
-- `agent-context/skills/revision-workflow.skill.md`
-- `agent-context/skills/remotion-composition.skill.md`
-- The relevant spec in `specs/`
-- Relevant files in `projects/<project-name>/src/`
+1. Read `project.config.ts` to determine `adapter`.
+2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
+3. Load `agent-context/skills/core/revision-workflow.skill.md`.
+4. Load all skills in `agent-context/skills/adapters/<adapter>/`.
+5. Load the relevant spec from `projects/<name>/specs/<variant>.spec.md`.
+6. Load relevant source files from `projects/<name>/src/`.
 
 ## Steps
 
-1. Locate the requested change.
-2. Decide whether the spec, code, or both should change.
-3. Make the smallest useful edit.
-4. Preserve existing approved behavior.
-5. Tell the user how to preview the change.
+1. Read `projects/<name>/project.config.ts` to identify the adapter and variant.
+2. Locate the requested change by scene, beat, timestamp, or visible element.
+3. Decide whether the spec (`projects/<name>/specs/<variant>.spec.md`), code, or both should change.
+4. Make the smallest useful edit.
+5. Preserve existing approved behavior.
+6. Tell the user how to preview with `pnpm --filter ./projects/<name> dev`.
 
 ## Ask If Missing
 
-- Which project to revise
+- Project name and variant
 - Which timestamp, scene, or visible element is affected
 
 ## Output
 
-Focused spec/code changes and a short revision summary.
+Focused spec or code changes at `projects/<name>/`, plus a short revision summary.

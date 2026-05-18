@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "animation-studio",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r run typecheck",
+    "build": "pnpm -r run build",
+    "clean": "pnpm -r exec -- rm -rf dist"
+  }
+}
