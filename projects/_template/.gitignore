@@ -1,0 +1,5 @@
+# Per-project output ignores
+output/*.mp4
+output/*.mov
+output/*.webm
+# PNG stills are tracked for review; remove this line to ignore them too

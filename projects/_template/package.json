@@ -1,0 +1,28 @@
+{
+  "name": "@studio/project-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "render": "remotion render src/index.ts"
+  },
+  "dependencies": {
+    "@studio/animation-utils": "workspace:*",
+    "@studio/spec-types": "workspace:*",
+    "remotion": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@studio/config-tsconfig": "workspace:*",
+    "@studio/config-eslint": "workspace:*",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": ">=5.4"
+  }
+}

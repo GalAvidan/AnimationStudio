@@ -15,14 +15,15 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 1. Identify the audience and the one idea the viewer must remember.
 2. Draft a concise script in plain language.
 3. Mark likely visual beats without specifying implementation details.
-4. Save or propose `scripts/<project-name>_script.md`.
+4. Save to `projects/<name>/scripts/<variant>.script.md` using `agent-context/templates/script.template.md` as the skeleton.
 
 ## Ask If Missing
 
+- Project name and variant (if the project already exists)
 - Target audience
 - Desired runtime
 - Tone or level of technical depth
 
 ## Output
 
-A readable script ready to become a spec.
+A readable script file at `projects/<name>/scripts/<variant>.script.md`, ready to become a spec.

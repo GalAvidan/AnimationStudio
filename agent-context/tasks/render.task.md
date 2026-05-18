@@ -13,12 +13,18 @@ The user wants a video or still export.
 
 ## Steps
 
-1. Confirm composition ID, output format, and destination.
-2. Go to `projects/<project-name>/`.
-3. Run a Remotion render command.
-4. Put final files in `output/`.
-5. Avoid inline JSON props on Windows; use props files when needed.
+1. Read `projects/<name>/project.config.ts` to get composition ID, output path, and adapter.
+2. From the adapter registry, get the `render cmd` for this adapter.
+3. Confirm `projects/<name>/props/<variant>.json` exists and contains valid props.
+4. Run from the repo root:
+   `pnpm --filter ./projects/<name> render -- --props=./props/<variant>.json`
+5. Verify the output file at `projects/<name>/output/<variant>.mp4`.
+
+## Ask If Missing
+
+- Project name and variant
+- Output format if not mp4
 
 ## Output
 
-A rendered video or still in `output/`.
+A rendered video at `projects/<name>/output/<variant>.mp4`.

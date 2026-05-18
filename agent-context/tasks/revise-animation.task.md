@@ -15,17 +15,18 @@ The user wants to change an existing animation by beat, timestamp, scene, or vis
 
 ## Steps
 
-1. Locate the requested change.
-2. Decide whether the spec, code, or both should change.
-3. Make the smallest useful edit.
-4. Preserve existing approved behavior.
-5. Tell the user how to preview the change.
+1. Read `projects/<name>/project.config.ts` to identify the adapter and variant.
+2. Locate the requested change by scene, beat, timestamp, or visible element.
+3. Decide whether the spec (`projects/<name>/specs/<variant>.spec.md`), code, or both should change.
+4. Make the smallest useful edit.
+5. Preserve existing approved behavior.
+6. Tell the user how to preview with `pnpm --filter ./projects/<name> dev`.
 
 ## Ask If Missing
 
-- Which project to revise
+- Project name and variant
 - Which timestamp, scene, or visible element is affected
 
 ## Output
 
-Focused spec/code changes and a short revision summary.
+Focused spec or code changes at `projects/<name>/`, plus a short revision summary.
