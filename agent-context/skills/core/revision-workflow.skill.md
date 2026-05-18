@@ -14,7 +14,7 @@ Make animation edits precise and reversible.
 
 ## Good Revision Requests
 
-- Slow the transition at 0:12.
+- Slow the transition in beat-3.
 - Make the text in Scene 2 easier to read.
 - Hold the final diagram for one more second.
 - Make the motion feel calmer during the key explanation beat.

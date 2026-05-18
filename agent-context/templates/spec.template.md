@@ -21,11 +21,12 @@
 
 ## Beat Map
 
-| Beat | Time | Narration | What the viewer sees | Purpose |
+| Beat | Duration | Narration | What the viewer sees | Purpose |
 |---|---:|---|---|---|
-| 1 — | 0:00–0:00 | | | |
+| 1 — | 0s | | | |
 
-<!-- Add one row per beat. Use relative timestamps (0:00–0:08).
+<!-- Add one row per beat. Duration is time on screen (e.g. `6s`, `400ms`).
+     Do not use absolute timeline positions — beats can be reordered without renumbering timestamps.
      "What the viewer sees" describes motion and layout, not code.
      "Purpose" is one clause: why this beat exists in the flow. -->
 
@@ -33,11 +34,12 @@
 
 ## Narration Sync Points
 
-| Sync point | Time | Visual event triggered |
-|---|---:|---|
-| `sync-id` | 0:00 | <!-- what visual event fires here --> |
+| Sync point | Beat ref | Visual event triggered |
+|---|---|---|
+| `sync-id` | beat-N, Xs in | <!-- what visual event fires here --> |
 
 <!-- Add one row per declared sync point.
+     Beat ref format: beat name + offset from its start (e.g. `beat-2, 3s in`).
      Sync IDs must be kebab-case and match markers in the script. -->
 
 ---
