@@ -16,7 +16,7 @@ The user wants to turn a script into an animation spec.
 
 1. Read the script from `projects/<name>/scripts/<variant>.script.md`.
 2. Identify the core message and audience.
-3. Create a beat map with timestamps or relative timing.
+3. Create a beat map with duration per beat (time on screen, e.g. `6s`, `400ms`). Do not use absolute timeline positions.
 4. Define visual philosophy, key moments, sync points, assets, and constraints.
 5. Exclude code, frame numbers, pixel positions, and component props.
 6. Save to `projects/<name>/specs/<variant>.spec.md` using `agent-context/templates/spec.template.md` as the skeleton.
