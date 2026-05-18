@@ -6,6 +6,7 @@ Agents resolve `<adapter>` from `project.config.ts`, then look up the matching r
 | adapter | package | license | capabilities | skills dir | preview cmd | render cmd | status |
 |---|---|---|---|---|---|---|---|
 | remotion | direct per-project deps; no shared adapter package in Plan 1 | Remotion license | 2d,audio,vector | skills/adapters/remotion/ | pnpm --filter ./projects/\<name\> dev | pnpm --filter ./projects/\<name\> render -- --props=./props/\<variant\>.json | stable |
+| motion-canvas | packages/adapter-motion-canvas | MIT | 2d,audio,vector | skills/adapters/motion-canvas/ | pnpm --filter ./projects/\<name\> dev | pnpm --filter ./projects/\<name\> build | experimental |
 
 ## Usage by Agents and Tasks
 

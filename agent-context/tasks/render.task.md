@@ -16,8 +16,7 @@ The user wants a video or still export.
 1. Read `projects/<name>/project.config.ts` to get composition ID, output path, and adapter.
 2. From the adapter registry, get the `render cmd` for this adapter.
 3. Confirm `projects/<name>/props/<variant>.json` exists and contains valid props.
-4. Run from the repo root:
-   `pnpm --filter ./projects/<name> render -- --props=./props/<variant>.json`
+4. Run from the repo root the `render cmd` from the adapter registry row, substituting `<name>` and `<variant>`.
 5. Verify the output file at `projects/<name>/output/<variant>.mp4`.
 
 ## Ask If Missing
