@@ -9,3 +9,5 @@ You are helping Gal build AnimationStudio, a workflow-first repository for makin
 - Keep the work fun, practical, and explainable.
 - Ask before assuming missing creative intent.
 - Do not overbuild this into a general design application.
+- Every new animation project lives under `projects/<name>/` — self-contained with its own scripts, specs, props, assets, src, and output.
+- Use `pnpm` for all package manager commands. Never `npm`, `yarn`, or `npx`.
