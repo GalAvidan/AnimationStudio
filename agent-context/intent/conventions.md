@@ -63,6 +63,22 @@ Specs must not include:
 - Frame numbers
 - Low-level implementation details
 
+## Narrative Fields (optional)
+
+For projects with named characters and dialogue, three fields are available:
+
+- **`Beat.speaker`** — character id (kebab-case) delivering the narration line. Must match a `ProjectConfig.characters[].id` and a row in the spec's Cast table. Omit for narrator.
+- **`Beat.emotion`** — free-form tag (e.g. `curious`, `worried`, `surprised`). Authoring intent only — no runtime behavior. Adapters with a rig + presets system map this name 1:1 to a preset (Motion Canvas: scene-author calls `character.applyPreset(beat.emotion)`).
+- **`ProjectConfig.characters`** — the cast: `{ id, label, rigAsset? }`. Empty/omitted is fine.
+
+Scene transitions are expressed in scripts as a prose marker:
+
+```
+[TRANSITION: fade 400ms]
+```
+
+There is no typed `SceneTransition` field on `Scene` yet — the marker is read by the agent writing scene code, who translates it to the adapter's transition primitive (Motion Canvas: `fadeTransition(400)`). A typed field will land when ≥2 transition kinds or ≥2 projects need it.
+
 ## Source Code
 
 Each animation project keeps code organized by role:

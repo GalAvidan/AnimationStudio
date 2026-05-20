@@ -9,6 +9,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./rig": {
+      "types": "./dist/rig.d.ts",
+      "default": "./dist/rig.js"
     }
   },
   "scripts": {
@@ -20,9 +24,20 @@
     "@studio/adapter-contract": "workspace:*",
     "@studio/spec-types": "workspace:*"
   },
+  "peerDependencies": {
+    "@motion-canvas/2d": "^3.0.0",
+    "@motion-canvas/core": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@motion-canvas/2d": { "optional": true },
+    "@motion-canvas/core": { "optional": true }
+  },
   "devDependencies": {
+    "@motion-canvas/2d": "^3.0.0",
+    "@motion-canvas/core": "^3.0.0",
     "@studio/config-tsconfig": "workspace:*",
     "@studio/config-eslint": "workspace:*",
+    "@types/node": "^20.0.0",
     "typescript": ">=5.4"
   }
 }

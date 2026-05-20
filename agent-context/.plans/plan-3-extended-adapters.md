@@ -1,8 +1,10 @@
 # Plan 3: Extended Adapters — Three.js + In-House Thin
 
+> **Execution-order note (added during Plan 4):** Plan 4 (Expressive Capability — Narrative + Character) now runs **before** this plan. Spec extensions in Plan 4 define the authoring contract that future adapters here must honor; better to prove them against the working Motion Canvas adapter first.
+
 **TL;DR** — After Motion Canvas is battle-tested in Plan 2, add the Two remaining adapters: **Three.js** for 3D scenes and the **in-house thin adapter** (React + Playwright + ffmpeg) as a zero-proprietary-dependency fallback for 2D. The `RenderAdapter` contract from Plan 2 is already in place; this plan is purely additive.
 
-**Prerequisite:** Plan 2 complete — Motion Canvas adapter stable, pilot project shipped, contract proven.
+**Prerequisite:** Plan 2 complete — Motion Canvas adapter stable, pilot project shipped, contract proven. **Plan 4 complete** — narrative spec fields and Motion Canvas rig API shipped.
 
 ---
 
