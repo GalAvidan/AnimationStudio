@@ -9,13 +9,15 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
 - `agent-context/skills/core/visual-clarity.skill.md`
+- `agent-context/skills/core/narrative-structure.skill.md`
 
 ## Steps
 
 1. Identify the audience and the one idea the viewer must remember.
 2. Draft a concise script in plain language.
 3. Mark likely visual beats without specifying implementation details.
-4. Save to `projects/<name>/scripts/<variant>.script.md` using `agent-context/templates/script.template.md` as the skeleton.
+4. For narrative projects (2+ characters speaking), use `[SPEAKER: <character-id>]` to attribute lines, and `[TRANSITION: fade <duration>]` for explicit scene boundaries. See `narrative-structure.skill.md`.
+5. Save to `projects/<name>/scripts/<variant>.script.md` using `agent-context/templates/script.template.md` as the skeleton.
 
 ## Ask If Missing
 
@@ -23,6 +25,7 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 - Target audience
 - Desired runtime
 - Tone or level of technical depth
+- For narrative projects: the cast (character ids and labels)
 
 ## Output
 
