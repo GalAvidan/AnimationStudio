@@ -18,8 +18,15 @@ projects/<name>/
     <variant>.json         Render props JSON (one per variant)
   assets/
     svg/                   Layered SVG files with conventional IDs
-    audio/                 Voiceover, SFX, music stems
+    audio/                 Voiceover, SFX, music stems (manually placed assets)
     fonts/                 Project-specific font files
+  audio/                   Generated audio pipeline artifacts
+    plan.json              Authored voice profiles + music moods (version-controlled)
+    narration/             TTS-generated WAV clips per beat (gitignored)
+    alignment/             Word-timing JSON per beat from forced alignment (gitignored)
+    music/                 Selected/downloaded music beds (gitignored)
+    sfx/                   Selected/downloaded SFX clips (gitignored)
+    compiled.timeline.json Merged audio timeline consumed by the composition (gitignored)
   src/
     data/                  Derived timing/copy data (beats-*.ts)
     components/            Reusable visual components
@@ -29,6 +36,8 @@ projects/<name>/
     index.ts               Registers the animation root
   output/                  Rendered artifacts (mp4/mov/webm gitignored, png tracked)
 ```
+
+The `audio/` folder is **optional** — projects without narration do not need it. When it exists, `audio/plan.json` is the only file that is committed; all generated files are excluded via `.gitignore`.
 
 ## Canonical Naming
 

@@ -1,0 +1,18 @@
+{
+  "projectSlug": "project-name",
+  "variantId": "general",
+  "voices": {
+    "_narrator": {
+      "engine": "piper",
+      "voiceId": "en_US-lessac-medium",
+      "rate": 1.0,
+      "pitch": 0
+    }
+  },
+  "scenes": [],
+  "mixing": {
+    "musicDuckingRatio": 0.25,
+    "targetLufs": -16
+  },
+  "version": "1"
+}
