@@ -114,7 +114,11 @@ export interface MusicBed {
 export interface MixingSettings {
   /**
    * How much to reduce music volume while narration is playing.
-   * 0 = silence music completely; 1 = no ducking. Default: 0.25.
+   * Valid range: 0–1.
+   *   0   = silence music completely during narration
+   *   0.25 = duck to 25 % of original volume (default)
+   *   1   = no ducking (music stays at full volume)
+   * Values outside 0–1 are treated as clamped to [0, 1] by the mixing layer.
    */
   musicDuckingRatio?: number;
   /** Integrated loudness target in LUFS (EBU R128). Default: -16 (web). */

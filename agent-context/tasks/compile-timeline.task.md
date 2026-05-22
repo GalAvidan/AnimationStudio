@@ -42,7 +42,10 @@ the same output for the same inputs.
      if clip:
        endSeconds = startSeconds + clip.durationSeconds + tailPad
      else:
-       endSeconds = startSeconds + (beat.authoredDuration ?? 2.0)   # fallback for silent beats
+       # 2.0 s is a reasonable on-screen pause for a silent beat (title card,
+       # transition hold). Adjust per-beat via plan.json if a different duration
+       # is needed; the compiler honours an authored beat.end when present.
+       endSeconds = startSeconds + (beat.authoredDuration ?? 2.0)
      cursor = endSeconds
 
      Build CompiledBeat {

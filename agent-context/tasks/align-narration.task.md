@@ -27,13 +27,13 @@ Narration WAV clips have been generated and the user wants word-level timestamps
 
 1. For each beat id (all by default):
    a. Confirm `audio/narration/<beatId>.wav` exists. Skip with a warning if not.
-   b. Run forced alignment:
+   b. Run forced alignment. **Run this command from the repo root** (`projects/<name>` is a relative path from there):
       ```
       python -c "
       from faster_whisper import WhisperModel
       import json, sys
       model = WhisperModel('base', device='cpu', compute_type='int8')
-      segments, _ = model.transcribe('audio/narration/<beatId>.wav', word_timestamps=True)
+      segments, _ = model.transcribe('projects/<name>/audio/narration/<beatId>.wav', word_timestamps=True)
       words = [{'word': w.word, 'startSeconds': w.start, 'endSeconds': w.end} for s in segments for w in (s.words or [])]
       print(json.dumps(words))
       "

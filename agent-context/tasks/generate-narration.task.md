@@ -32,10 +32,14 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
    a. Determine the `VoiceProfile` to use: `voices[beat.speaker ?? "_narrator"]`.
    b. Compute the **content hash**: `sha256(narrationText + voiceId + JSON.stringify(voiceProfile))`.
    c. Check if `projects/<name>/audio/narration/<beatId>.wav` already exists. If it does, compare the stored `contentHash` in the alignment file (if present) against the computed hash. Skip if matching and `forceRegenerate` is false.
-   d. Run the TTS engine to produce a WAV file at `projects/<name>/audio/narration/<beatId>.wav`:
-      - **piper:** `echo "<narrationText>" | piper --model <voiceId> --output_file audio/narration/<beatId>.wav`
-      - **xtts:** `tts --text "<narrationText>" --model_name tts_models/multilingual/multi-dataset/xtts_v2 --speaker_wav <referenceAudio> --out_path audio/narration/<beatId>.wav`
-      - **espeak:** `espeak-ng -w audio/narration/<beatId>.wav "<narrationText>"`
+   d. Run the TTS engine to produce a WAV file at `projects/<name>/audio/narration/<beatId>.wav`.
+      **Important:** narration text may contain quotes, parentheses, or other shell-special characters.
+      Write the narration text to a temporary file and pass the file to the engine instead of
+      interpolating the text directly into a shell command. Example patterns:
+      - **piper:** Write text to a temp file, then `piper --model <voiceId> --output_file <wavPath> < <tempFile>`
+      - **xtts:** Use the Python API directly (`TTS(...).tts_to_file(text=..., ...)`) rather than the CLI; this avoids shell expansion entirely.
+      - **espeak:** `espeak-ng -w <wavPath> -f <tempFile>` (reads text from file)
+      Using a temp file or the engine's Python API is always preferred over interpolating text into a shell string.
    e. Measure the output file duration (e.g. `ffprobe -i audio/narration/<beatId>.wav -show_entries format=duration`).
    f. Record the result (beatId, fileRef, contentHash, durationSeconds, words: []) for the compiler to consume.
 4. Report a summary: beats generated vs. skipped (cached).
