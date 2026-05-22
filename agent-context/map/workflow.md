@@ -41,4 +41,9 @@
 
 ## Current Projects
 
-*(Updated by the `refresh-map` task as projects are added.)*
+| Project | Adapter | Variants | Notes |
+|---|---|---|---|
+| `why-sky-is-blue` | motion-canvas | general | Visual science explainer |
+| `character-pilot` | motion-canvas | general | Character rig pilot |
+| `why-ice-floats` | motion-canvas | general | Visual science explainer |
+| `agentic-ai-architecture` | motion-canvas | general | Speech test — webspeech engine |

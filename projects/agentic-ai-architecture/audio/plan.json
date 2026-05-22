@@ -1,0 +1,48 @@
+{
+  "version": "1",
+  "projectSlug": "agentic-ai-architecture",
+  "variantId": "general",
+  "voices": {
+    "_narrator": {
+      "engine": "webspeech",
+      "voiceId": "en-US",
+      "rate": 0.9
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "intro",
+      "music": { "sceneId": "intro", "mood": "calm", "intensity": "low" },
+      "sfx": []
+    },
+    {
+      "sceneId": "layers",
+      "music": { "sceneId": "layers", "mood": "educational", "intensity": "medium" },
+      "sfx": []
+    },
+    {
+      "sceneId": "orchestrator",
+      "music": { "sceneId": "orchestrator", "mood": "focused", "intensity": "medium" },
+      "sfx": []
+    },
+    {
+      "sceneId": "agents",
+      "music": { "sceneId": "agents", "mood": "neutral", "intensity": "medium" },
+      "sfx": []
+    },
+    {
+      "sceneId": "skills-tools",
+      "music": { "sceneId": "skills-tools", "mood": "technical", "intensity": "medium" },
+      "sfx": []
+    },
+    {
+      "sceneId": "takeaway",
+      "music": { "sceneId": "takeaway", "mood": "uplifting", "intensity": "low" },
+      "sfx": []
+    }
+  ],
+  "mixing": {
+    "musicDuckingRatio": 0.25,
+    "targetLufs": -16
+  }
+}

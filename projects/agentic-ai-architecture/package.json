@@ -1,0 +1,24 @@
+{
+  "name": "@studio/project-agentic-ai-architecture",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@motion-canvas/core": "^3.0.0",
+    "@motion-canvas/2d": "^3.0.0",
+    "@studio/spec-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@motion-canvas/vite-plugin": "^3.0.0",
+    "@motion-canvas/ui": "^3.0.0",
+    "@studio/config-tsconfig": "workspace:*",
+    "@studio/config-eslint": "workspace:*",
+    "typescript": ">=5.4",
+    "vite": "^5.0.0"
+  }
+}
