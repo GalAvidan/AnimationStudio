@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -150 300 300">
+  <!-- Head -->
+  <circle id="head" cx="0" cy="0" r="118" fill="#ffd8b1" stroke="#3a2a1a" stroke-width="5" opacity="1"/>
+
+  <!-- Brows: neutral = horizontal. Rig rotates around rect center. -->
+  <rect id="brow_left"  x="-77" y="-67" width="50" height="8" rx="4" fill="#3a2a1a" opacity="1"/>
+  <rect id="brow_right" x="27"  y="-67" width="50" height="8" rx="4" fill="#3a2a1a" opacity="1"/>
+
+  <!-- Eyes -->
+  <circle id="eye_left"  cx="-46" cy="-28" r="14" fill="#2a1a0a" opacity="1"/>
+  <circle id="eye_right" cx="46"  cy="-28" r="14" fill="#2a1a0a" opacity="1"/>
+
+  <!-- Mouth slot: only mouth_neutral visible at start -->
+  <rect    id="mouth_neutral"    x="-36" y="46" width="72" height="8" rx="4" fill="#3a2a1a" opacity="1"/>
+  <ellipse id="mouth_surprised"  cx="0"  cy="64" rx="20" ry="24" fill="#2a1a0a" opacity="0"/>
+  <path    id="mouth_smile"      d="M-38 50 Q0 82 38 50" stroke="#3a2a1a" stroke-width="8" fill="none" stroke-linecap="round" opacity="0"/>
+</svg>
