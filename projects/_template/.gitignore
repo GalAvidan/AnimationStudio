@@ -3,3 +3,10 @@ output/*.mp4
 output/*.mov
 output/*.webm
 # PNG stills are tracked for review; remove this line to ignore them too
+
+# Generated audio artifacts — large binaries, re-created from plan.json
+audio/narration/
+audio/alignment/
+audio/music/
+audio/sfx/
+audio/compiled.timeline.json

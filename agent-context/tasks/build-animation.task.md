@@ -18,9 +18,10 @@ The user has an approved spec and wants a Remotion animation project.
 1. Read `projects/<name>/project.config.ts` to confirm the spec, adapter, and variant.
 2. Confirm the spec at `projects/<name>/specs/<variant>.spec.md` has a clear beat map and constraints.
 3. Convert beats into scenes and timing data; write derived data to `projects/<name>/src/data/`.
-4. Implement the composition with stable IDs inside `projects/<name>/src/`.
-5. Keep scene code in `src/scenes/` and reusable components in `src/components/`.
-6. Report the preview command from the adapter registry.
+4. If `projects/<name>/audio/compiled.timeline.json` exists, read it and wire `<Audio>` / `<Sequence>` blocks into the composition for narration clips, music beds, and SFX cues. Use `compiledTimeline.scenes[].beats[].narration.fileRef` for narration and `compiledTimeline.scenes[].music.trackRef` for music beds.
+5. Implement the composition with stable IDs inside `projects/<name>/src/`.
+6. Keep scene code in `src/scenes/` and reusable components in `src/components/`.
+7. Report the preview command from the adapter registry.
 
 ## Ask If Missing
 

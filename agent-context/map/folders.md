@@ -25,13 +25,14 @@
 - `packages/config-tsconfig/`: exports `base.json` — extended by all packages and projects.
 - `packages/config-eslint/`: exports shared flat ESLint config.
 - `packages/spec-types/`: `ProjectConfig`, `Beat`, `Scene`, `SyncPoint`, `BeatTimeline` types (`@studio/spec-types`).
+- `packages/audio-spec/`: `AudioPlan`, `VoiceProfile`, `AudioCue`, `MusicBed`, `NarrationClip`, `AlignedWord`, `CompiledTimeline`, and related types (`@studio/audio-spec`). Used by the audio pipeline tasks and by Remotion compositions that mount narration/music.
 - `packages/animation-utils/`: renderer-neutral easing/progress/fade helpers (`@studio/animation-utils`).
 - `packages/adapter-contract/`: adapter registry metadata types (`@studio/adapter-contract`).
 
 ## Projects
 
 - `projects/_template/`: scaffolding source — excluded from pnpm workspace. Copy this to create a new project.
-- `projects/<name>/`: one self-contained animation project. Contains `project.config.ts`, `scripts/`, `specs/`, `props/`, `assets/`, `src/`, `output/`.
+- `projects/<name>/`: one self-contained animation project. Contains `project.config.ts`, `scripts/`, `specs/`, `props/`, `assets/`, `src/`, `output/`, and optionally `audio/`.
 
 ## References
 
