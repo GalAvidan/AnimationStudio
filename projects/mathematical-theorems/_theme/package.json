@@ -1,0 +1,23 @@
+{
+  "name": "@studio/theme-mathematical-theorems",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@studio/config-tsconfig": "workspace:*",
+    "@studio/config-eslint": "workspace:*",
+    "typescript": ">=5.4"
+  }
+}
