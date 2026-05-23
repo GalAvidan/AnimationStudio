@@ -1,17 +1,18 @@
 import type { BeatTimeline } from "@studio/spec-types";
+import { palette, fonts } from "@studio/theme-mathematical-theorems";
 
 // ---- Palette (from specs/kids.spec.md) ----
 export const COLORS = {
-  bg:       "#FFF8E7", // cream
-  ink:      "#3A2A1A", // warm dark for text
+  bg:       palette.background,
+  ink:      palette.ink,
   legA:     "#E85D4A", // red, short leg (length 3)
   legB:     "#4A90D9", // blue, long leg (length 4)
   hyp:      "#7ED321", // green, hypotenuse (length 5)
-  sparkle:  "#FFD166", // gold accent
-  marker:   "#3A2A1A", // right-angle square marker
+  sparkle:  palette.accent,
+  marker:   palette.ink,
 } as const;
 
-export const FONT = "Nunito, 'Segoe UI', system-ui, sans-serif";
+export const FONT = fonts.body;
 
 // ---- Geometry (px) ----
 export const UNIT = 80;
@@ -52,6 +53,13 @@ export const EQ_DOCK_Y = -180; // where the docked numbers (9, 16) sit under the
 
 // Title position (large hero text)
 export const TITLE_POS: [number, number] = [380, 220];
+
+// Caption label positions — contextual labels per beat
+export const CAPTION_90_POS:    [number, number] = [-240, 230]; // right of right-angle corner
+export const CAPTION_SQA_POS:   [number, number] = [-420, -90]; // above red square
+export const CAPTION_SQB_POS:   [number, number] = [ 220, 370]; // right of blue square
+export const CAPTION_SQC_POS:   [number, number] = [ 420, -90]; // right of green square
+export const CAPTION_FINAL_POS: [number, number] = [ 380, 230]; // theorem takeaway area
 
 // ---- Beat durations (seconds) ----
 export const BEATS = {

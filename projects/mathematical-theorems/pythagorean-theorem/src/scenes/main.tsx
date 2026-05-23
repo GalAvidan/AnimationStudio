@@ -3,6 +3,7 @@ import {
   all,
   sequence,
   waitFor,
+  waitUntil,
   createRef,
   createSignal,
   easeInOutCubic,
@@ -38,6 +39,11 @@ import {
   EQ_X_Q,
   EQ_DOCK_Y,
   TITLE_POS,
+  CAPTION_90_POS,
+  CAPTION_SQA_POS,
+  CAPTION_SQB_POS,
+  CAPTION_SQC_POS,
+  CAPTION_FINAL_POS,
 } from "../data/beats-kids";
 
 // =============================================================================
@@ -518,6 +524,76 @@ export default makeScene2D(function* (view) {
   );
 
   // =========================================================================
+  // Contextual caption labels — one per beat, opacity 0 until animated
+  // =========================================================================
+  const caption90    = createRef<Txt>();
+  const captionSqA   = createRef<Txt>();
+  const captionSqB   = createRef<Txt>();
+  const captionSqC   = createRef<Txt>();
+  const captionFinal = createRef<Txt>();
+
+  view.add(
+    <Txt
+      ref={caption90}
+      text="90°"
+      fontSize={28}
+      fontFamily={FONT}
+      fontWeight={700}
+      fill={COLORS.ink}
+      position={CAPTION_90_POS}
+      opacity={0}
+    />
+  );
+  view.add(
+    <Txt
+      ref={captionSqA}
+      text="3 × 3 = 9"
+      fontSize={32}
+      fontFamily={FONT}
+      fontWeight={700}
+      fill={COLORS.legA}
+      position={CAPTION_SQA_POS}
+      opacity={0}
+    />
+  );
+  view.add(
+    <Txt
+      ref={captionSqB}
+      text="4 × 4 = 16"
+      fontSize={32}
+      fontFamily={FONT}
+      fontWeight={700}
+      fill={COLORS.legB}
+      position={CAPTION_SQB_POS}
+      opacity={0}
+    />
+  );
+  view.add(
+    <Txt
+      ref={captionSqC}
+      text="5 × 5 = 25"
+      fontSize={32}
+      fontFamily={FONT}
+      fontWeight={700}
+      fill={COLORS.hyp}
+      position={CAPTION_SQC_POS}
+      opacity={0}
+    />
+  );
+  view.add(
+    <Txt
+      ref={captionFinal}
+      text="Works for every right triangle!"
+      fontSize={36}
+      fontFamily={FONT}
+      fontWeight={700}
+      fill={COLORS.ink}
+      position={CAPTION_FINAL_POS}
+      opacity={0}
+    />
+  );
+
+  // =========================================================================
   // SparkleBurst component (inlined) — quick radial gold sparkles
   // =========================================================================
   function* sparkle(at: [number, number], count = 8, radius = 80, dur = 0.7) {
@@ -555,6 +631,7 @@ export default makeScene2D(function* (view) {
   // BEAT 1 — Intro (~6s)
   // Triangle slides/bounces in. Right-angle marker pops on "square corner".
   // ===========================================================================
+  yield* waitUntil('beat-1:intro');
   // Triangle group entrance: scale from 0 with bounce
   yield* waitFor(0.3);
   yield* all(
@@ -565,17 +642,23 @@ export default makeScene2D(function* (view) {
     hypLine().points([P3, P2], 0.9, easeOutCubic),
   );
   // SYNC: triangle-in — right-angle marker pops
+  yield* waitUntil('sync:triangle-in');
   yield* all(
     rightAngle().opacity(1, 0.25, easeOutCubic),
     rightAngle().scale(0, 0),
   );
   yield* rightAngle().scale(1, 0.5, easeOutBack);
-  yield* waitFor(3.2); // hold the establishing shot — total ~6s
+  // Caption: label the right angle while kids study the triangle
+  yield* caption90().opacity(1, 0.4, easeOutCubic);
+  yield* waitFor(2.0);
+  yield* caption90().opacity(0, 0.4, easeOutCubic);
+  yield* waitFor(0.4); // 0.4+2.0+0.4+0.4 = 3.2s hold total
 
   // ===========================================================================
   // BEAT 2 — Label sides 3, 4, 5 (~7s)
   // Numbers fly in with a tick (staggered).
   // ===========================================================================
+  yield* waitUntil('beat-2:labels');
   // Labels and formula appear together: triangle sides and the equation goal
   // are introduced as a single unified beat — no gap between them.
   yield* all(
@@ -600,7 +683,9 @@ export default makeScene2D(function* (view) {
   // ===========================================================================
   // BEAT 3 — Square A (red, 3×3, dots count to 9) (~9s)
   // ===========================================================================
+  yield* waitUntil('beat-3:square-a');
   // SYNC: square-a-pop — unfold red square
+  yield* waitUntil('sync:square-a-pop');
   yield* sqA().scale([1, 1], 0.85, easeOutBack);
   // Dots fill in over ~4s, counter ticks up in lock-step (one tick per dot)
   const dotsA = gridA.dotRefs;
@@ -617,13 +702,18 @@ export default makeScene2D(function* (view) {
       ),
     ),
   );
-  yield* waitFor(3.0); // hold — beat ~9s (0.85 + 4 + 3 ≈ 7.85s; pad a touch)
-  yield* waitFor(1.15);
+  // Caption: reveal the multiplication fact as all dots are counted
+  yield* captionSqA().opacity(1, 0.5, easeOutCubic);
+  yield* waitFor(2.5);
+  yield* captionSqA().opacity(0, 0.4, easeOutCubic);
+  yield* waitFor(0.75); // 0.5+2.5+0.4+0.75 = 4.15s ≈ original 3.0+1.15
 
   // ===========================================================================
   // BEAT 4 — Square B (blue, 4×4, dots count to 16) (~9s)
   // ===========================================================================
+  yield* waitUntil('beat-4:square-b');
   // SYNC: square-b-pop
+  yield* waitUntil('sync:square-b-pop');
   yield* sqB().scale([1, 1], 0.85, easeOutBack);
   const dotsB = gridB.dotRefs;
   const gapB = (4.0 - dotInDur) / dotsB.length;
@@ -638,8 +728,11 @@ export default makeScene2D(function* (view) {
       ),
     ),
   );
-  yield* waitFor(3.0);
-  yield* waitFor(1.15);
+  // Caption: reveal the multiplication fact as all dots are counted
+  yield* captionSqB().opacity(1, 0.5, easeOutCubic);
+  yield* waitFor(2.5);
+  yield* captionSqB().opacity(0, 0.4, easeOutCubic);
+  yield* waitFor(0.75); // 0.5+2.5+0.4+0.75 = 4.15s ≈ original 3.0+1.15
 
   // ===========================================================================
   // BEAT 5 — Values dock under A² / B² (~10s)
@@ -647,6 +740,7 @@ export default makeScene2D(function* (view) {
   // values: show 3² / 4² briefly to make the "squaring" step explicit, then
   // morph each into its computed value (9 and 16).
   // ===========================================================================
+  yield* waitUntil('beat-5:equation');
   yield* waitFor(0.4);
 
   // 3² appears at the red square (mirroring the in-square counter),
@@ -692,8 +786,10 @@ export default makeScene2D(function* (view) {
   // ===========================================================================
   // BEAT 6 — Build "9 + 16 = 25"; green square unfolds; 25 lands on it (~12s)
   // ===========================================================================
+  yield* waitUntil('beat-6:sum');
   // SYNC: sum-collide — reveal "+" between 9 and 16, then "= 25"
   // A tiny lean-in from 9 and 16 toward the "+" sells the connection.
+  yield* waitUntil('sync:sum-collide');
   yield* all(
     tok9().position.x(EQ_X_A + 12, 0.25, easeInOutCubic),
     tok16().position.x(EQ_X_B - 12, 0.25, easeInOutCubic),
@@ -727,6 +823,7 @@ export default makeScene2D(function* (view) {
   yield* waitFor(0.8);
 
   // SYNC: hypotenuse-square — green square unfolds along the hypotenuse
+  yield* waitUntil('sync:hypotenuse-square');
   yield* sqC().scale([1, 1], 1.1, easeOutBack);
 
   // C dots fill in + counter ticks 0 → 25 in lock-step (mirrors A and B)
@@ -761,12 +858,16 @@ export default makeScene2D(function* (view) {
   // Small bounce on landing
   yield* tok25Sq().scale(1.15, 0.2, easeOutCubic);
   yield* tok25Sq().scale(1.0, 0.25, easeOutBounce);
-
-  yield* waitFor(2.0);
+  // Caption: surface the area formula for the C square
+  yield* all(
+    captionSqC().opacity(1, 0.5, easeOutCubic),
+    waitFor(2.0),
+  );
 
   // ===========================================================================
   // BEAT 7 — Verify: equation completes, hero title settles (~9s)
   // ===========================================================================
+  yield* waitUntil('beat-7:verify');
   // Bring back a small ghost of the equation completion: put "C²" where "?" was
   const eqC = createRef<Txt>();
   view.add(
@@ -785,6 +886,8 @@ export default makeScene2D(function* (view) {
   yield* all(
     eqC().opacity(1, 0.3),
     eqC().scale(1, 0.4, easeOutBack),
+    // Fade out the C-square caption as focus shifts to the derivation
+    captionSqC().opacity(0, 0.3, easeOutCubic),
   );
   yield* waitFor(0.4);
 
@@ -816,6 +919,7 @@ export default makeScene2D(function* (view) {
   yield* waitFor(0.5);
 
   // NOW the equation is proven — ✓ pops to celebrate the solved result.
+  yield* waitUntil('sync:verify-equals');
   yield* all(
     eqCheck().opacity(1, 0.3),
     eqCheck().scale(0, 0),
@@ -838,8 +942,11 @@ export default makeScene2D(function* (view) {
     sparkle([P1[0], P1[1]], 8, 120, 0.9),
   );
   yield* triScale(1.0, 0.9, easeInOutCubic);
-
-  yield* waitFor(0.8);
+  // Caption: theorem takeaway — stays visible through the outro
+  yield* all(
+    captionFinal().opacity(1, 0.5, easeOutCubic),
+    waitFor(0.8),
+  );
 
   // ===========================================================================
   // OUTRO — Squares fold away, leaving the clean triangle (~2.5s)

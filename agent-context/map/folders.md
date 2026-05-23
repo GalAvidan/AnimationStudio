@@ -8,7 +8,7 @@
 - `BOT.md`, `CONTEXT.md`, `REFERENCES.md`: human-friendly project context.
 - `README.md`: repository guide for humans.
 - `package.json`: workspace root with `lint`, `typecheck`, `build`, `clean` scripts.
-- `pnpm-workspace.yaml`: declares `packages/*` and `projects/*` globs (excludes `projects/_template`).
+- `pnpm-workspace.yaml`: declares `packages/*`, `projects/*`, and `projects/*/*` globs (excludes `projects/_template` and `projects/_template-motion-canvas`).
 - `.prettierrc`: root Prettier config, applies everywhere.
 
 ## Canonical Context
@@ -32,7 +32,11 @@
 ## Projects
 
 - `projects/_template/`: scaffolding source — excluded from pnpm workspace. Copy this to create a new project.
+- `projects/_template-motion-canvas/`: Motion Canvas scaffolding source — excluded from pnpm workspace.
 - `projects/<name>/`: one self-contained animation project. Contains `project.config.ts`, `scripts/`, `specs/`, `props/`, `assets/`, `src/`, `output/`, and optionally `audio/`.
+- `projects/<collection>/`: a **theme collection** folder grouping related projects. Contains no `package.json` itself — it is just a folder. Each project inside is a standard animation project nested one level deeper.
+- `projects/<collection>/_theme/`: shared design-token package for the collection (`@studio/theme-<collection>`). Exports `palette` and `fonts` constants used by every project in the collection. Build it with `pnpm --filter @studio/theme-<collection> build`.
+- `projects/<collection>/<name>/`: a project inside a collection. Identical structure to a flat project; its `project.config.ts` sets `collection: "<collection>"` and its `package.json` adds `@studio/theme-<collection>` as a dependency.
 
 ## References
 

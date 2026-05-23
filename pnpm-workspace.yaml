@@ -1,5 +1,6 @@
 packages:
   - "packages/*"
   - "projects/*"
+  - "projects/*/*"
   - "!projects/_template"
   - "!projects/_template-motion-canvas"

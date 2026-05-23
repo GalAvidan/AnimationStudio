@@ -3,6 +3,7 @@ import type { ProjectConfig } from "@studio/spec-types";
 const config: ProjectConfig = {
   slug: "pythagorean-theorem",
   title: "Pythagorean Theorem",
+  collection: "mathematical-theorems",
   adapter: "motion-canvas",
   defaultVariant: "kids",
   variants: [

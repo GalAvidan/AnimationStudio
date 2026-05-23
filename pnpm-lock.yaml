@@ -131,7 +131,19 @@ importers:
         specifier: ^5.0.0
         version: 5.4.21(@types/node@20.19.41)
 
-  projects/pythagorean-theorem:
+  projects/mathematical-theorems/_theme:
+    devDependencies:
+      '@studio/config-eslint':
+        specifier: workspace:*
+        version: link:../../../packages/config-eslint
+      '@studio/config-tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/config-tsconfig
+      typescript:
+        specifier: '>=5.4'
+        version: 6.0.3
+
+  projects/mathematical-theorems/pythagorean-theorem:
     dependencies:
       '@motion-canvas/2d':
         specifier: ^3.0.0
@@ -141,7 +153,10 @@ importers:
         version: 3.17.2
       '@studio/spec-types':
         specifier: workspace:*
-        version: link:../../packages/spec-types
+        version: link:../../../packages/spec-types
+      '@studio/theme-mathematical-theorems':
+        specifier: workspace:*
+        version: link:../_theme
     devDependencies:
       '@motion-canvas/ui':
         specifier: ^3.0.0
@@ -151,10 +166,10 @@ importers:
         version: 3.17.2(vite@5.4.21(@types/node@20.19.41))
       '@studio/config-eslint':
         specifier: workspace:*
-        version: link:../../packages/config-eslint
+        version: link:../../../packages/config-eslint
       '@studio/config-tsconfig':
         specifier: workspace:*
-        version: link:../../packages/config-tsconfig
+        version: link:../../../packages/config-tsconfig
       typescript:
         specifier: '>=5.4'
         version: 6.0.3

@@ -11,7 +11,8 @@
   "dependencies": {
     "@motion-canvas/core": "^3.0.0",
     "@motion-canvas/2d": "^3.0.0",
-    "@studio/spec-types": "workspace:*"
+    "@studio/spec-types": "workspace:*",
+    "@studio/theme-mathematical-theorems": "workspace:*"
   },
   "devDependencies": {
     "@motion-canvas/vite-plugin": "^3.0.0",
