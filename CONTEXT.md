@@ -13,6 +13,12 @@ AnimationStudio helps turn things Gal wants to explain into productive, understa
 - The system stays model-agnostic through shared files in `agent-context/`.
 - Shared TypeScript types and utilities live in `packages/` under the `@studio/` scope.
 
+## Project Location (as of 2026-05-29)
+
+- Active projects live at **`{projects}`** which resolves to `C:\Git\Vault\AnimationStudio\projects`.
+- `C:\Git\AnimationStudio\projects\` contains **only templates** (`_template`, `_template-motion-canvas`). Do not create new projects here.
+- Legacy projects (character-pilot, pythagorean-theorem, agentic-ai-architecture, why-ice-floats, why-sky-is-blue) are archived at `Vault/AnimationStudio/archive/`. See `Vault/AnimationStudio/archive/ARCHIVE_INDEX.md`.
+
 ## What To Avoid
 
 - Building a Photoshop, PowerPoint, Claude Design, or generic animation studio clone.
@@ -20,4 +26,4 @@ AnimationStudio helps turn things Gal wants to explain into productive, understa
 - Letting agent-specific instruction files become competing sources of truth.
 - Routing new work to root `scripts/`, `specs/`, `assets/`, or `output/` — those folders no longer exist.
 - Using `npm`, `yarn`, or `npx` — this workspace uses `pnpm` exclusively.
-- Moving project folders physically before the dependency gate is approved.
+- Creating project folders under `C:\Git\AnimationStudio\projects\` — new projects go to `{projects}` (Vault).
