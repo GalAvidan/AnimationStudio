@@ -6,6 +6,7 @@ Narration WAVs (and optionally alignment JSON files) exist and the user wants to
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs
@@ -18,8 +19,8 @@ Narration WAVs (and optionally alignment JSON files) exist and the user wants to
 
 ## Prerequisites
 
-- `projects/<name>/audio/plan.json` is present and valid.
-- `projects/<name>/specs/<variant>.spec.md` is the approved spec (source of scenes + beats + sync points).
+- `{projects}/<name>/audio/plan.json` is present and valid.
+- `{projects}/<name>/specs/<variant>.spec.md` is the approved spec (source of scenes + beats + sync points).
 - At least one narration WAV exists in `audio/narration/`.
 - FFmpeg is on PATH (used to measure WAV durations via `ffprobe`).
 
@@ -70,7 +71,7 @@ the same output for the same inputs.
      totalDurationSeconds (last beat's endSeconds),
      scenes (sorted by sceneId), mixing
    }
-   → projects/<name>/audio/compiled.timeline.json
+   → {projects}/<name>/audio/compiled.timeline.json
 ```
 
 ## Error Conditions (halt and report)
@@ -84,7 +85,7 @@ Never silently drop audio — fail loudly with the missing path.
 
 ## Output
 
-`projects/<name>/audio/compiled.timeline.json` — the final merged timeline.
+`{projects}/<name>/audio/compiled.timeline.json` — the final merged timeline.
 
 ## How the Remotion Composition Uses This File
 
@@ -116,5 +117,5 @@ Music and SFX are added the same way using `scene.music.trackRef` and `beat.sfxC
 ```
 Run build-animation (or revise your composition) to wire the compiled timeline
 into the Remotion source, then preview with:
-  pnpm --filter ./projects/<name> dev
+  pnpm --filter @studio/project-<name> dev
 ```
