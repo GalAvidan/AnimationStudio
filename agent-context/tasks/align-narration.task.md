@@ -6,7 +6,7 @@ Narration WAV clips have been generated and the user wants word-level timestamps
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs

@@ -6,7 +6,7 @@ The user has an approved spec and wants a Remotion animation project.
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 1. Read `project.config.ts` to determine `adapter` and `variants`.
 2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
 3. Load `agent-context/intent/overview.md` and `agent-context/intent/conventions.md`.

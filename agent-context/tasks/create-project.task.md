@@ -6,7 +6,7 @@ The user wants to start a new animation project from scratch.
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
 - `agent-context/map/adapter-registry.md`

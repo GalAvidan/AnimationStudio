@@ -6,7 +6,7 @@ Narration WAVs (and optionally alignment JSON files) exist and the user wants to
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs
