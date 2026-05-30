@@ -6,6 +6,7 @@ The user wants to inspect the animation locally.
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 1. Read `project.config.ts` to determine `adapter`.
 2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
 3. Load all skills in `agent-context/skills/adapters/<adapter>/`.
@@ -19,7 +20,7 @@ The user wants to inspect the animation locally.
 
 ## Ask If Missing
 
-- Project name (when more than one project exists under `projects/`).
+- Project name (when more than one project exists under `{projects}/`).
 
 ## Output
 

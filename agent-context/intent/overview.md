@@ -2,6 +2,10 @@
 
 AnimationStudio is a workflow-first repository for turning explanations into short, clear animations. The value is in the repeatable creative process, not in a custom design UI.
 
+Content ownership split:
+- AnimationStudio repository: framework logic, templates, tasks, maps, packages.
+- Vault repository: project content resolved through `agent-context/intent/vault.md` aliases.
+
 ## Purpose
 
 Help move from an idea or rough explanation to a reviewed animation spec, then to an animation project that can be previewed, revised, and rendered.

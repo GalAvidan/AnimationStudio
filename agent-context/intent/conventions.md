@@ -2,10 +2,10 @@
 
 ## Project Layout
 
-Every animation project is self-contained under `projects/<kebab-case-name>/`:
+Every animation project is self-contained under `{projects}/<kebab-case-name>/`:
 
 ```
-projects/<name>/
+{projects}/<name>/
   project.config.ts        Single routing source: adapter, variants, video, slug
   package.json             Per-project deps and pnpm scripts (dev, build, lint, render)
   tsconfig.json            Extends @studio/config-tsconfig/base.json
@@ -41,12 +41,12 @@ The `audio/` folder is **optional** — projects without narration do not need i
 
 ## Canonical Naming
 
-- Project folder: `projects/<kebab-case-name>/`
-- Script: `projects/<name>/scripts/<variant>.script.md`
-- Spec: `projects/<name>/specs/<variant>.spec.md`
-- Render props: `projects/<name>/props/<variant>.json`
-- Rendered video: `projects/<name>/output/<variant>.mp4`
-- Rendered still: `projects/<name>/output/<variant>-<timestamp-or-frame>.png`
+- Project folder: `{projects}/<kebab-case-name>/`
+- Script: `{projects}/<name>/scripts/<variant>.script.md`
+- Spec: `{projects}/<name>/specs/<variant>.spec.md`
+- Render props: `{projects}/<name>/props/<variant>.json`
+- Rendered video: `{projects}/<name>/output/<variant>.mp4`
+- Rendered still: `{projects}/<name>/output/<variant>-<timestamp-or-frame>.png`
 
 Use lowercase kebab-case for project names, e.g. `how-tokens-work`. Do not use `projectN-` prefixes.
 

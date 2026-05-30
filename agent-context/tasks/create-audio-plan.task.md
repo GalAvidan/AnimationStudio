@@ -6,6 +6,7 @@ The user has an approved spec and wants to set up the audio layer — voices, mu
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
 - `agent-context/skills/core/audio-pipeline.skill.md`
@@ -20,12 +21,12 @@ The user has an approved spec and wants to set up the audio layer — voices, mu
 
 ## Steps
 
-1. Read `projects/<name>/project.config.ts` to confirm the slug, variant, and character ids.
-2. Read `projects/<name>/specs/<variant>.spec.md` to extract:
+1. Read `{projects}/<name>/project.config.ts` to confirm the slug, variant, and character ids.
+2. Read `{projects}/<name>/specs/<variant>.spec.md` to extract:
    - All scene ids and labels from the Beat Map.
    - All character ids from the Cast table (if any).
    - Mood or tone indicators from the Visual Philosophy section.
-3. Read `projects/<name>/scripts/<variant>.script.md` to check for `[SPEAKER: ...]` markers and narration text.
+3. Read `{projects}/<name>/scripts/<variant>.script.md` to check for `[SPEAKER: ...]` markers and narration text.
 4. Build a draft `AudioPlan` (see `@studio/audio-spec`):
    - Populate `voices` with one `VoiceProfile` per character id found in step 2, plus a `"_narrator"` entry for beats without a speaker. Default all to `engine: "piper"`, `voiceId: "en_US-lessac-medium"`.
    - Populate `scenes[]` — one entry per scene, each with a `music` block. Infer `mood` from the spec's Visual Philosophy (e.g. "calm + educational" → `"neutral"`, "tense reveal" → `"tense"`). Leave `trackRef` empty (the agent will resolve it during `select-music-and-sfx`). Leave `sfx: []` for now.
@@ -35,7 +36,7 @@ The user has an approved spec and wants to set up the audio layer — voices, mu
    - Music mood per scene.
    - Any scenes where the mood could not be inferred (flag these explicitly).
 6. **Wait for user approval.** Do not generate any TTS or download any assets until the user confirms.
-7. After approval (with any edits the user provides), write the plan to `projects/<name>/audio/plan.json`. Replace `"project-name"` and `"general"` stub values with the real slug and variant.
+7. After approval (with any edits the user provides), write the plan to `{projects}/<name>/audio/plan.json`. Replace `"project-name"` and `"general"` stub values with the real slug and variant.
 
 ## Validation
 
@@ -52,7 +53,7 @@ The user has an approved spec and wants to set up the audio layer — voices, mu
 
 ## Output
 
-An authored plan at `projects/<name>/audio/plan.json`, ready for `generate-narration`.
+An authored plan at `{projects}/<name>/audio/plan.json`, ready for `generate-narration`.
 
 ## Next Step
 

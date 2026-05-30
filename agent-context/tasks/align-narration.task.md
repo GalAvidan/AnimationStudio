@@ -6,6 +6,7 @@ Narration WAV clips have been generated and the user wants word-level timestamps
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs
@@ -18,7 +19,7 @@ Narration WAV clips have been generated and the user wants word-level timestamps
 
 ## Prerequisites
 
-- WAV files exist at `projects/<name>/audio/narration/<beatId>.wav`.
+- WAV files exist at `{projects}/<name>/audio/narration/<beatId>.wav`.
 - **faster-whisper** is installed: `pip install faster-whisper`.
   - Alternatively, **whisperx** for higher-accuracy alignment: `pip install whisperx`.
 - `ffprobe` (part of FFmpeg) is available on PATH for duration measurement.
@@ -33,12 +34,12 @@ Narration WAV clips have been generated and the user wants word-level timestamps
       from faster_whisper import WhisperModel
       import json, sys
       model = WhisperModel('base', device='cpu', compute_type='int8')
-      segments, _ = model.transcribe('projects/<name>/audio/narration/<beatId>.wav', word_timestamps=True)
+      segments, _ = model.transcribe('{projects}/<name>/audio/narration/<beatId>.wav', word_timestamps=True)
       words = [{'word': w.word, 'startSeconds': w.start, 'endSeconds': w.end} for s in segments for w in (s.words or [])]
       print(json.dumps(words))
       "
       ```
-   c. Write the result to `projects/<name>/audio/alignment/<beatId>.json`:
+   c. Write the result to `{projects}/<name>/audio/alignment/<beatId>.json`:
       ```json
       {
         "beatId": "<beatId>",
@@ -58,7 +59,7 @@ Narration WAV clips have been generated and the user wants word-level timestamps
 
 ## Output
 
-Alignment JSON files at `projects/<name>/audio/alignment/<beatId>.json` for each processed beat.
+Alignment JSON files at `{projects}/<name>/audio/alignment/<beatId>.json` for each processed beat.
 
 ## Next Step
 

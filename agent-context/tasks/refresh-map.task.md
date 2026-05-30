@@ -6,6 +6,7 @@ The folder structure, projects, packages, or adapter registry has changed and th
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 - `agent-context/map/folders.md`
 - `agent-context/map/workflow.md`
 - `agent-context/map/adapter-registry.md`
@@ -14,7 +15,7 @@ The folder structure, projects, packages, or adapter registry has changed and th
 
 1. Inspect the repository. Primary sources to check:
    - `packages/` — any new or removed workspace packages.
-   - `projects/` — any new self-contained project folders (look for `project.config.ts`).
+   - `{projects}/` — any new self-contained project folders (look for `project.config.ts`).
    - `agent-context/skills/core/` and `agent-context/skills/adapters/` — any new or removed skill files.
    - `agent-context/map/adapter-registry.md` — any new or changed adapters.
 2. Update `agent-context/map/folders.md` if stable folder locations have changed.
@@ -24,7 +25,7 @@ The folder structure, projects, packages, or adapter registry has changed and th
 
 ## Notes
 
-- Each project under `projects/` is self-contained. Do not route new work to root `scripts/`, `specs/`, `assets/`, or `output/` — those folders no longer exist.
+- Each project under `{projects}/` is self-contained. Do not route new work to root `scripts/`, `specs/`, `assets/`, or `output/` — those folders no longer exist.
 - `projects/_template/` is a scaffolding source, not an active project.
 
 ## Output

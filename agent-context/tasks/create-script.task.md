@@ -6,6 +6,7 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
 - `agent-context/skills/core/visual-clarity.skill.md`
@@ -17,7 +18,7 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 2. Draft a concise script in plain language.
 3. Mark likely visual beats without specifying implementation details.
 4. For narrative projects (2+ characters speaking), use `[SPEAKER: <character-id>]` to attribute lines, and `[TRANSITION: fade <duration>]` for explicit scene boundaries. See `narrative-structure.skill.md`.
-5. Save to `projects/<name>/scripts/<variant>.script.md` using `agent-context/templates/script.template.md` as the skeleton.
+5. Save to `{projects}/<name>/scripts/<variant>.script.md` using `agent-context/templates/script.template.md` as the skeleton.
 
 ## Ask If Missing
 
@@ -29,4 +30,4 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 
 ## Output
 
-A readable script file at `projects/<name>/scripts/<variant>.script.md`, ready to become a spec.
+A readable script file at `{projects}/<name>/scripts/<variant>.script.md`, ready to become a spec.

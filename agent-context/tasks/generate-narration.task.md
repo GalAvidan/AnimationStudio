@@ -6,6 +6,7 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs
@@ -18,7 +19,7 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
 
 ## Prerequisites
 
-- `projects/<name>/audio/plan.json` must exist and be approved.
+- `{projects}/<name>/audio/plan.json` must exist and be approved.
 - The TTS engine specified in each `VoiceProfile.engine` must be installed:
   - **piper** — `piper` binary on PATH; voice ONNX + config files accessible.
   - **xtts** — `tts` CLI from Coqui TTS installed; `referenceAudio` set in `VoiceProfile` if voice cloning.
@@ -26,13 +27,13 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
 
 ## Steps
 
-1. Read `projects/<name>/audio/plan.json` to get `voices` and the spec's narration text.
-2. Read `projects/<name>/specs/<variant>.spec.md` to get all beats with `narration` text, `speaker`, and ids.
+1. Read `{projects}/<name>/audio/plan.json` to get `voices` and the spec's narration text.
+2. Read `{projects}/<name>/specs/<variant>.spec.md` to get all beats with `narration` text, `speaker`, and ids.
 3. For each beat that has narration text:
    a. Determine the `VoiceProfile` to use: `voices[beat.speaker ?? "_narrator"]`.
    b. Compute the **content hash**: `sha256(narrationText + voiceId + JSON.stringify(voiceProfile))`.
-   c. Check if `projects/<name>/audio/narration/<beatId>.wav` already exists. If it does, compare the stored `contentHash` in the alignment file (if present) against the computed hash. Skip if matching and `forceRegenerate` is false.
-   d. Run the TTS engine to produce a WAV file at `projects/<name>/audio/narration/<beatId>.wav`.
+   c. Check if `{projects}/<name>/audio/narration/<beatId>.wav` already exists. If it does, compare the stored `contentHash` in the alignment file (if present) against the computed hash. Skip if matching and `forceRegenerate` is false.
+   d. Run the TTS engine to produce a WAV file at `{projects}/<name>/audio/narration/<beatId>.wav`.
       **Important:** narration text may contain quotes, parentheses, or other shell-special characters.
       Write the narration text to a temporary file and pass the file to the engine instead of
       interpolating the text directly into a shell command. Example patterns:
@@ -46,7 +47,7 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
 
 ## Output
 
-WAV files at `projects/<name>/audio/narration/<beatId>.wav` for every beat with narration.
+WAV files at `{projects}/<name>/audio/narration/<beatId>.wav` for every beat with narration.
 
 ## Next Step
 

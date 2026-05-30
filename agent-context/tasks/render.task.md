@@ -6,18 +6,19 @@ The user wants a video or still export.
 
 ## Load
 
+1. Load `agent-context/intent/vault.md`.
 1. Read `project.config.ts` to determine `adapter` and `variants`.
 2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
 3. Load all skills in `agent-context/skills/adapters/<adapter>/`.
-4. Load the relevant spec from `projects/<name>/specs/<variant>.spec.md`.
+4. Load the relevant spec from `{projects}/<name>/specs/<variant>.spec.md`.
 
 ## Steps
 
-1. Read `projects/<name>/project.config.ts` to get composition ID, output path, and adapter.
+1. Read `{projects}/<name>/project.config.ts` to get composition ID, output path, and adapter.
 2. From the adapter registry, get the `render cmd` for this adapter.
-3. Confirm `projects/<name>/props/<variant>.json` exists and contains valid props.
+3. Confirm `{projects}/<name>/props/<variant>.json` exists and contains valid props.
 4. Run from the repo root the `render cmd` from the adapter registry row, substituting `<name>` and `<variant>`.
-5. Verify the output file at `projects/<name>/output/<variant>.mp4`.
+5. Verify the output file at `{projects}/<name>/output/<variant>.mp4`.
 
 ## Ask If Missing
 
@@ -26,4 +27,4 @@ The user wants a video or still export.
 
 ## Output
 
-A rendered video at `projects/<name>/output/<variant>.mp4`.
+A rendered video at `{projects}/<name>/output/<variant>.mp4`.
