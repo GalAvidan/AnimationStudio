@@ -6,7 +6,7 @@ The `audio/plan.json` has scene music moods and/or SFX cues that reference queri
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs

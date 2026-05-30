@@ -6,7 +6,7 @@ The user wants to turn a script into an animation spec.
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
 - `agent-context/skills/core/visual-clarity.skill.md`

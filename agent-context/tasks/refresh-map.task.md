@@ -6,7 +6,7 @@ The folder structure, projects, packages, or adapter registry has changed and th
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/map/folders.md`
 - `agent-context/map/workflow.md`
 - `agent-context/map/adapter-registry.md`

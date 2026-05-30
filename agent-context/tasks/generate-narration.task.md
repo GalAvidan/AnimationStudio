@@ -6,7 +6,7 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/skills/core/audio-pipeline.skill.md`
 
 ## Inputs

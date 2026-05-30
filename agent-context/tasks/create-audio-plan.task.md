@@ -6,7 +6,7 @@ The user has an approved spec and wants to set up the audio layer — voices, mu
 
 ## Load
 
-1. Load `agent-context/intent/vault.md`.
+1. Load `agent-context/intent/dependencies/vault.md`.
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`
 - `agent-context/skills/core/audio-pipeline.skill.md`
