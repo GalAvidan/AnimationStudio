@@ -1,5 +1,12 @@
 export type AdapterName = "remotion" | "motion-canvas";
 
+export interface CampaignRef {
+  /** kebab-case campaign slug; must match a folder in Vault/campaigns/ */
+  slug: string;
+  /** sub-project ID within the campaign (matches sub-projects.md row) */
+  subProjectId: string;
+}
+
 export interface VideoConfig {
   width: number;
   height: number;
@@ -38,6 +45,13 @@ export interface CharacterRef {
   label: string;
   /** optional path relative to project root, e.g. "assets/hero.svg" */
   rigAsset?: string;
+  /**
+   * When this character comes from the campaign shared resource catalog,
+   * set campaignRef to true and version to the pinned version (e.g. "v1").
+   * Omit version to use the current version declared in the campaign manifest.
+   */
+  campaignRef?: boolean;
+  version?: string;
 }
 
 export interface ProjectConfig {
@@ -52,6 +66,11 @@ export interface ProjectConfig {
   video: VideoConfig;
   /** optional cast for narrative / character-driven projects */
   characters?: CharacterRef[];
+  /**
+   * Campaign this project belongs to. Optional — omit for standalone projects.
+   * When present, agents resolve shared resources via the campaign.md dependency.
+   */
+  campaign?: CampaignRef;
   /** optional, for cataloging */
   tags?: string[];
 }

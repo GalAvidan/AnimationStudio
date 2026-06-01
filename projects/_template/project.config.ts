@@ -16,6 +16,10 @@ const config: ProjectConfig = {
     },
   ],
   video: { width: 1920, height: 1080, fps: 30 },
+  // campaign: {
+  //   slug: "my-campaign",        // kebab-case; must match a folder in Vault/campaigns/
+  //   subProjectId: "animation-ep01", // must match a row in sub-projects.md
+  // },
 };
 
 export default config;
