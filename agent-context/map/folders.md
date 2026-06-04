@@ -5,7 +5,7 @@
 - `AGENTS.md`: generic agent adapter.
 - `CLAUDE.md`: Claude adapter.
 - `.github/copilot-instructions.md`: Copilot adapter.
-- `BOT.md`, `CONTEXT.md`, `REFERENCES.md`: human-friendly project context.
+- `bot.md`, `context.md`, `references.md`: human-friendly project context.
 - `README.md`: repository guide for humans.
 - `package.json`: workspace root with `lint`, `typecheck`, `build`, `clean` scripts.
 - `pnpm-workspace.yaml`: declares `packages/*`, `projects/*`, and `projects/*/*` globs (excludes `projects/_template` and `projects/_template-motion-canvas`).

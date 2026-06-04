@@ -6,7 +6,7 @@ studio_name: AnimationStudio
 project_root_alias: "{projects}"
 
 status:
-  source_path: c:\Git\AnimationStudio\CONTEXT.md
+  source_path: c:\Git\AnimationStudio\context.md
   read_mode: file
 
 current_work:
@@ -15,7 +15,7 @@ current_work:
   empty_note: "No active projects. All prior work is archived at Vault/AnimationStudio/archive/projects/."
 
 blockers:
-  source_path: c:\Git\AnimationStudio\CONTEXT.md
+  source_path: c:\Git\AnimationStudio\context.md
   read_mode: file
 
 recent_activity:
@@ -30,7 +30,7 @@ bounds:
 
 security:
   allow_paths:
-    - c:\Git\AnimationStudio\CONTEXT.md
+    - c:\Git\AnimationStudio\context.md
     - c:\Git\AnimationStudio\agent-context\intent\overview.md
     - c:\Git\AnimationStudio\agent-context\map\
     - c:\Git\Vault\AnimationStudio\projects\
@@ -48,5 +48,5 @@ notes: >
   current_work and recent_activity read from Vault/AnimationStudio/projects/ (the live content root).
   When that folder is empty, Hub should report "no active projects" and point to the archive.
   Archive path: Vault/AnimationStudio/archive/projects/.
-  Status and blockers are read from CONTEXT.md.
+  Status and blockers are read from context.md.
 ---

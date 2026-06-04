@@ -125,7 +125,7 @@ If one person fills multiple roles, role responsibilities still apply as separat
 2. Establish framework-first active layout.
 3. Update root routing and load instructions.
 4. Add explicit archive pointer document in active Studio root:
-   - `ARCHIVE_POINTER.md`
+   - `archive_pointer.md`
 
 ### Default Load Path Decision (Required)
 

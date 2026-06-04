@@ -59,7 +59,7 @@
   - Motion Canvas as default for new 2D projects and why
   - When to choose Three.js vs in-house-2d
 - [ ] Update `README.md` — adapter section with all four adapters and links
-- [ ] Update `REFERENCES.md` — Three.js docs, Playwright docs
+- [ ] Update `references.md` — Three.js docs, Playwright docs
 
 ---
 
