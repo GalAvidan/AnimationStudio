@@ -30,6 +30,15 @@ The user wants to inspect the animation locally.
 
 - Project name (when more than one project exists under `{projects}/`).
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 A running animation studio preview.

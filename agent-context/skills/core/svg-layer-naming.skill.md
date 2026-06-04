@@ -4,6 +4,22 @@
 
 Keep design assets easy for agents and code to target.
 
+## Inputs
+
+- Source SVG assets intended for animation targeting.
+- Character or scene naming context from spec/config.
+
+## Outputs
+
+- Predictable, machine-targetable layer names.
+- Slot-compatible naming for swappable rig parts.
+
+## Failure Modes
+
+- Minified/flattened SVG layers that remove targetable ids.
+- Inconsistent part prefixes that break slot-based swaps.
+- Missing minimum rig parts for required character actions.
+
 ## Rules
 
 - Preserve layer names when exporting SVGs.

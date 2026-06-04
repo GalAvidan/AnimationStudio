@@ -51,8 +51,17 @@ The user has an approved spec and wants to set up the audio layer — voices, mu
 - If a character's preferred voice style is not clear from the spec (ask: "What voice style should the hero use? e.g. warm, authoritative, young").
 - If music mood cannot be inferred from the spec (ask per scene).
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 An authored plan at `{projects}/<name>/audio/plan.json`, ready for `generate-narration`.
 
 ## Next Step

@@ -54,6 +54,15 @@ The user wants to validate a project before building or rendering, or when `buil
 | Campaign not found | Warn only — do not stop |
 | Missing status.md | Warn and recommend `update-status`; do not stop |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 A pass/fail report listing all checked files and values. On pass, recommended next task.

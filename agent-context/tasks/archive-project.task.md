@@ -46,6 +46,15 @@ The user wants to move a completed or paused project from the active projects ro
 | Archive collision (slug already in archive) | Stop and report; do not overwrite |
 | Partial move detected | Report and leave source intact; do not update archive-index |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Project tree moved to `Vault/AnimationStudio/archive/projects/<slug>/`, archive-index updated, `rehydration-map.md` created.

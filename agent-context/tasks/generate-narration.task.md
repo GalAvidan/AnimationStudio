@@ -45,8 +45,17 @@ The user has an approved `audio/plan.json` and wants to produce TTS audio clips 
    f. Record the result (beatId, fileRef, contentHash, durationSeconds, words: []) for the compiler to consume.
 4. Report a summary: beats generated vs. skipped (cached).
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 WAV files at `{projects}/<name>/audio/narration/<beatId>.wav` for every beat with narration.
 
 ## Next Step

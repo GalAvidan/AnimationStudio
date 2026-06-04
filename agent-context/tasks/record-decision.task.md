@@ -33,6 +33,15 @@ The user wants to log a project-level creative or implementation decision.
    - `session summary`: "Decision recorded: <title>"
    - `next action`: unchanged unless user specified otherwise.
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Updated `{projects}/<name>/decisions.md` with a new append-only decision entry.

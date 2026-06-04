@@ -4,6 +4,23 @@
 
 Make animation edits precise and reversible.
 
+## Inputs
+
+- Target project slug and variant.
+- Change request anchored by scene, beat, timestamp, or visible element.
+- Current spec and relevant source files for the affected area.
+
+## Outputs
+
+- Minimal spec/code edits that satisfy the request.
+- A short revision summary stating what changed and what remained stable.
+
+## Failure Modes
+
+- Ambiguous change request with no stable anchor.
+- Requested change conflicts with approved creative direction and needs explicit confirmation.
+- Missing target files for the requested scene/beat.
+
 ## Rules
 
 - Locate the requested change by scene, beat, timestamp, or visible element.

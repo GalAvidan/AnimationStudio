@@ -33,6 +33,15 @@ The user has an idea, rough notes, or a transcript and wants a script for an exp
 - Tone or level of technical depth
 - For narrative projects: the cast (character ids and labels)
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 A readable script file at `{projects}/<name>/scripts/<variant>.script.md`, ready to become a spec.

@@ -4,6 +4,23 @@
 
 Keep motion clear, pleasant, and purposeful across any rendering adapter.
 
+## Inputs
+
+- Intent of each beat (entrance, transformation, emphasis, exit).
+- Composition frame rate and runtime constraints.
+- Readability requirements from the active spec.
+
+## Outputs
+
+- Motion timing and easing recommendations by beat intent.
+- Default duration guidance for transitions, accents, and holds.
+
+## Failure Modes
+
+- Motion intent is unclear or contradictory in the spec.
+- Required readability cannot be met with requested motion density.
+- Adapter-specific limits block the requested easing style.
+
 ## Rules
 
 - Use quick ease-out entrances for simple elements.

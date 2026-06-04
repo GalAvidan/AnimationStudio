@@ -50,6 +50,15 @@ The user has an approved spec and wants to build an animation project.
 | Spec status is not `Approved` | Stop and report. Recommend `approve-spec` before build. |
 | `approvedBy` or `approvedDate` missing | Stop and report missing approval metadata. |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 An animation project ready to preview with `pnpm --filter @studio/project-<name> dev`.

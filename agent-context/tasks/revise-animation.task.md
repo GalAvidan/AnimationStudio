@@ -35,6 +35,15 @@ The user wants to change an existing animation by beat, timestamp, scene, or vis
 - Project name and variant
 - Which timestamp, scene, or visible element is affected
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Focused spec or code changes at `{projects}/<name>/`, plus a short revision summary.
