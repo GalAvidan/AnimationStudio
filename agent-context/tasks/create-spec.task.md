@@ -23,10 +23,14 @@ The user wants to turn a script into an animation spec.
 5. Define visual philosophy, key moments, sync points, assets, and constraints.
 6. Exclude code, frame numbers, pixel positions, and component props.
 7. Save to `{projects}/<name>/specs/<variant>.spec.md` using `agent-context/templates/spec.template.md` as the skeleton.
+   - Ensure frontmatter starts with:
+     - `status: Draft`
+     - `approvedBy:`
+     - `approvedDate:`
 8. As the final step, call `update-status` to record:
 	- `phase`: `spec-drafted`
-	- variant update: `specApproved = draft` for `<variant>`
-	- `next action`: "Review and approve the spec before build"
+	- variant update: `specApproved = Draft` for `<variant>`
+	- `next action`: "Run approve-spec after review, then build-animation"
 	- `session summary`: one-line spec progress note.
 
 ## Ask If Missing

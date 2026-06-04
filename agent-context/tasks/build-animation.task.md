@@ -17,13 +17,18 @@ The user has an approved spec and wants to build an animation project.
 ## Steps
 
 1. Read `{projects}/<name>/project.config.ts` to confirm the spec, adapter, and variant.
-2. Confirm the spec at `{projects}/<name>/specs/<variant>.spec.md` has a clear beat map and constraints.
-3. Convert beats into scenes and timing data; write derived data to `{projects}/<name>/src/data/`.
-4. If `{projects}/<name>/audio/compiled.timeline.json` exists, read it and wire `<Audio>` / `<Sequence>` blocks into the composition for narration clips, music beds, and SFX cues. Use `compiledTimeline.scenes[].beats[].narration.fileRef` for narration and `compiledTimeline.scenes[].music.trackRef` for music beds.
-5. Implement the composition with stable IDs inside `{projects}/<name>/src/`.
-6. Keep scene code in `src/scenes/` and reusable components in `src/components/`.
-7. Report the preview command from the adapter registry.
-8. As the final step, call `update-status` to record:
+2. Read frontmatter in `{projects}/<name>/specs/<variant>.spec.md` and confirm:
+   - `status: Approved`
+   - `approvedBy` is not empty
+   - `approvedDate` is not empty
+   If any of these checks fail, stop and report that the spec is not approved for build.
+3. Confirm the spec at `{projects}/<name>/specs/<variant>.spec.md` has a clear beat map and constraints.
+4. Convert beats into scenes and timing data; write derived data to `{projects}/<name>/src/data/`.
+5. If `{projects}/<name>/audio/compiled.timeline.json` exists, read it and wire `<Audio>` / `<Sequence>` blocks into the composition for narration clips, music beds, and SFX cues. Use `compiledTimeline.scenes[].beats[].narration.fileRef` for narration and `compiledTimeline.scenes[].music.trackRef` for music beds.
+6. Implement the composition with stable IDs inside `{projects}/<name>/src/`.
+7. Keep scene code in `src/scenes/` and reusable components in `src/components/`.
+8. Report the preview command from the adapter registry.
+9. As the final step, call `update-status` to record:
 	- `phase`: `built`
 	- variant update: `built = yes` for `<variant>`
 	- `next action`: "Preview the build and capture revision notes"
@@ -32,9 +37,16 @@ The user has an approved spec and wants to build an animation project.
 ## Ask If Missing
 
 - Project name and variant
-- Approved spec
+- Approved spec (`status: Approved`, `approvedBy`, `approvedDate`)
 - Required assets
 - Runtime or output size
+
+## Failure Modes
+
+| Condition | Action |
+|---|---|
+| Spec status is not `Approved` | Stop and report. Recommend `approve-spec` before build. |
+| `approvedBy` or `approvedDate` missing | Stop and report missing approval metadata. |
 
 ## Output
 

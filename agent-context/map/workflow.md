@@ -23,6 +23,7 @@
 |---|---|---|---|
 | Resume / Continue project | `agent-context/tasks/resume-project.task.md` | (read-only) | Resume briefing: phase, last session, next action |
 | Update status / Refresh status | `agent-context/tasks/update-status.task.md` | `{projects}/<name>/status.md` | Updated status snapshot + history line |
+| Approve spec | `agent-context/tasks/approve-spec.task.md` | `{projects}/<name>/specs/<variant>.spec.md` | Spec status set to `Approved` with approver metadata |
 | Create new project | `agent-context/tasks/create-project.task.md` | `{projects}/<name>/` | Scaffolded project |
 | Create theme collection | `agent-context/tasks/create-collection.task.md` | `{projects}/<collection>/_theme/` | Theme package (`@studio/theme-<collection>`) |
 | Create project in collection | `agent-context/tasks/create-project.task.md` (pass `collection` input) | `{projects}/<collection>/<name>/` | Scaffolded project wired to theme package |
