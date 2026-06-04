@@ -22,7 +22,9 @@ The user wants to change an existing animation by beat, timestamp, scene, or vis
 4. Make the smallest useful edit.
 5. Preserve existing approved behavior.
 6. Tell the user how to preview with `pnpm --filter @studio/project-<name> dev`.
-7. As the final step, call `update-status` to record:
+7. If the revision produced reusable learnings, append them to `{projects}/<name>/notes.md`:
+   - include `observation`, `impact`, and whether the note is `reusable`.
+8. As the final step, call `update-status` to record:
 	- `phase`: `revising`
 	- variant update: increment or clear `pendingRevisions` for `<variant>`
 	- `next action`: "Preview updated changes and re-render if approved"

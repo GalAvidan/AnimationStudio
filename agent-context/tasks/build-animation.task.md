@@ -28,7 +28,9 @@ The user has an approved spec and wants to build an animation project.
 6. Implement the composition with stable IDs inside `{projects}/<name>/src/`.
 7. Keep scene code in `src/scenes/` and reusable components in `src/components/`.
 8. Report the preview command from the adapter registry.
-9. As the final step, call `update-status` to record:
+9. If notable implementation learnings emerged, append them to `{projects}/<name>/notes.md`:
+   - include `observation`, `impact`, and whether the note is `reusable`.
+10. As the final step, call `update-status` to record:
 	- `phase`: `built`
 	- variant update: `built = yes` for `<variant>`
 	- `next action`: "Preview the build and capture revision notes"
