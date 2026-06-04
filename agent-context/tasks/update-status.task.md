@@ -24,6 +24,7 @@
 | Next action | Yes | Single most important next step. |
 | Session summary | Yes | One-line summary of what changed in this session. |
 | Variant updates | No | Optional updates for one or more variant rows (`scripted`, `specApproved`, `built`, `rendered`, `pendingRevisions`). |
+| Run outcome | No | Optional execution outcome fields (preview/render status, command, output path, manifest path, timestamps). |
 
 ## Validation
 
@@ -38,9 +39,10 @@
 4. Set **Next action** to the provided next action.
 5. Set **Last session** to the provided session summary.
 6. If variant updates were provided, update matching rows in the **Variants** table.
-7. Append one line to **State history**:
+7. If run outcome fields were provided, update matching fields in **Latest run outcomes**.
+8. Append one line to **State history**:
    - `[YYYY-MM-DD] <phase> | <session summary>`
-8. Save `{projects}/<name>/status.md`.
+9. Save `{projects}/<name>/status.md`.
 
 ## Report to User
 

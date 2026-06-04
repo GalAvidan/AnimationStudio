@@ -19,9 +19,24 @@ The user wants a video or still export.
 3. Confirm `{projects}/<name>/props/<variant>.json` exists and contains valid props.
 4. Run from the repo root the `render cmd` from the adapter registry row, substituting `<name>` and `<variant>`.
 5. Verify the output file at `{projects}/<name>/output/<variant>.mp4`.
-6. As the final step, call `update-status` to record:
+6. Write render provenance to `{projects}/<name>/output/<variant>.manifest.json` with:
+	- `project`: `<name>`
+	- `variant`: `<variant>`
+	- `adapter`: adapter from `project.config.ts`
+	- `specPath`: `specs/<variant>.spec.md`
+	- `propsPath`: `props/<variant>.json`
+	- `outputPath`: `output/<variant>.mp4`
+	- `renderCommand`: expanded command used for the run
+	- `renderedAt`: ISO timestamp
+	- `status`: `success` or `failed`
+	- `gitSha`: current commit SHA when available
+7. As the final step, call `update-status` to record:
 	- `phase`: `rendered`
 	- variant update: `rendered = yes` for `<variant>`
+	- run outcome:
+	  - `lastRenderStatus`: `success` or `failed`
+	  - `lastRenderOutput`: `output/<variant>.mp4` on success
+	  - `lastRenderManifest`: `output/<variant>.manifest.json`
 	- `next action`: "Review output and decide whether revisions are needed"
 	- `session summary`: one-line render result note.
 
@@ -32,4 +47,5 @@ The user wants a video or still export.
 
 ## Output
 
-A rendered video at `{projects}/<name>/output/<variant>.mp4`.
+- Rendered video at `{projects}/<name>/output/<variant>.mp4`.
+- Render provenance at `{projects}/<name>/output/<variant>.manifest.json`.
