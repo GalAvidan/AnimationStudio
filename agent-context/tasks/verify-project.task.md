@@ -26,6 +26,10 @@ The user wants to validate a project before building or rendering, or when `buil
 4. **Variants check:** for each variant in `variants`:
    - Confirm `{projects}/<slug>/scripts/<variant>.script.md` exists.
    - Confirm `{projects}/<slug>/specs/<variant>.spec.md` exists.
+   - Read spec frontmatter and confirm:
+     - `status` is either `Draft` or `Approved`.
+     - If `status: Approved`, both `approvedBy` and `approvedDate` are present.
+   - If `status` is not `Approved`, report as ❌ for build-readiness and stop.
    - Confirm `{projects}/<slug>/props/<variant>.json` exists.
    - Report any missing files; list them all before stopping.
 5. **Audio check:** if `{projects}/<slug>/specs/<variant>.spec.md` references a compiled timeline, confirm `{projects}/<slug>/audio/compiled.timeline.json` exists.
@@ -45,6 +49,7 @@ The user wants to validate a project before building or rendering, or when `buil
 | Project slug not found | Stop immediately |
 | Unknown adapter | List valid adapters and stop |
 | Missing variant files | List all missing files and stop |
+| Variant spec is not approved | List as ❌ and stop. Recommend `approve-spec`. |
 | Missing compiled timeline (when referenced) | List as ❌; stop |
 | Campaign not found | Warn only — do not stop |
 | Missing status.md | Warn and recommend `update-status`; do not stop |
