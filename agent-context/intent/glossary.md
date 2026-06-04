@@ -30,7 +30,7 @@ A named version of an animation produced from the same project (e.g., `general`,
 
 ## Collection
 
-A themed grouping of related animation projects sharing a design-token package (`@studio/theme-<collection>`). A collection folder (`projects/<collection>/`) contains a `_theme/` package and one or more standard project folders. Declared in `project.config.ts` via the `collection` field.
+A themed grouping of related animation projects sharing a design-token package (`@studio/theme-<collection>`). A collection folder (`{projects}/<collection>/`) contains a `_theme/` package and one or more standard project folders. Declared in `project.config.ts` via the `collection` field.
 
 ## Audio Plan
 

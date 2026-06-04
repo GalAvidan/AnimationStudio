@@ -6,7 +6,7 @@ Scaffold and maintain consistent design-token packages for theme collections. A 
 
 ## Rules
 
-- A theme collection lives at `projects/<collection>/` and contains a `_theme/` sub-package.
+- A theme collection lives at `{projects}/<collection>/` and contains a `_theme/` sub-package.
 - The theme package name is always `@studio/theme-<collection>`.
 - `_theme/` must export a `palette` constant and a `fonts` constant from `src/index.ts`.
 - Every project in the collection adds `@studio/theme-<collection>` as a dependency in its `package.json`.
@@ -16,9 +16,9 @@ Scaffold and maintain consistent design-token packages for theme collections. A 
 ## Required Files for a New Theme Package
 
 ```
-projects/<collection>/_theme/
+{projects}/<collection>/_theme/
 ├── package.json          name: "@studio/theme-<collection>"; scripts: { build }; main: "dist/index.js"
-├── tsconfig.json         extends: "../../packages/config-tsconfig/base.json"
+├── tsconfig.json         extends: "@studio/config-tsconfig/base.json"
 └── src/
     └── index.ts          exports palette and fonts constants
 ```

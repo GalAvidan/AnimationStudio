@@ -24,7 +24,7 @@ The user wants to move a completed or paused project from the active projects ro
 
 1. Read `{projects}/<slug>/project.config.ts` to confirm the project name, adapter, and variants.
 2. Move the entire `{projects}/<slug>/` tree to `Vault/AnimationStudio/archive/projects/<slug>/`.
-3. In `Vault/AnimationStudio/archive/archive-index.md`, append a row for the archived project:
+3. In `Vault/AnimationStudio/archive/ARCHIVE_INDEX.md`, append a row for the archived project:
    - Columns: slug, adapter, variants (comma-separated), archive date (YYYY-MM-DD), notes.
 4. Create `Vault/AnimationStudio/archive/projects/<slug>/manifest/rehydration-map.md` documenting:
    - Original path: `{projects}/<slug>/`

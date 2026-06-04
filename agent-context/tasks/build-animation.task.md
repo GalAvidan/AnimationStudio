@@ -8,7 +8,7 @@ The user has an approved spec and wants to build an animation project.
 
 1. Load `agent-context/intent/dependencies/vault.md`.
 2. Read `project.config.ts` to determine `adapter` and `variants`.
-2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
+3. Look up the adapter row in `agent-context/map/adapter-registry.md`.
 3. Load `agent-context/intent/overview.md` and `agent-context/intent/conventions.md`.
 4. Load all skills in `agent-context/skills/core/`.
 5. Load all skills in `agent-context/skills/adapters/<adapter>/` (resolved from registry).

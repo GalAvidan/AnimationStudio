@@ -8,7 +8,7 @@ The user wants to inspect the animation locally.
 
 1. Load `agent-context/intent/dependencies/vault.md`.
 2. Read `project.config.ts` to determine `adapter`.
-2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
+3. Look up the adapter row in `agent-context/map/adapter-registry.md`.
 3. Load all skills in `agent-context/skills/adapters/<adapter>/`.
 
 ## Steps

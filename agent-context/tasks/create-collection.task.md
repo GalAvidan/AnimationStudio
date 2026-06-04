@@ -28,7 +28,7 @@ The user wants to create a new theme collection that future projects can belong 
 1. Create the folder `{projects}/<collection>/`.
 2. Create `{projects}/<collection>/_theme/` with the required files per `theme-collection.skill.md`:
    - `package.json` with `name: "@studio/theme-<collection>"` and a `build` script.
-   - `tsconfig.json` extending `../../packages/config-tsconfig/base.json`.
+   - `tsconfig.json` extending `@studio/config-tsconfig/base.json`.
    - `src/index.ts` exporting `palette` and `fonts` constants (apply any palette/font overrides from inputs).
 3. Report the collection path, theme package name, and next steps:
    - Run `pnpm install` to wire the workspace.

@@ -18,7 +18,7 @@ Before doing project work, load these files in order:
 - Treat `agent-context/` as the canonical source of truth.
 - Treat this file as an adapter, not an independent rulebook.
 - AnimationStudio is framework-first: keep logic, templates, packages, and task orchestration in this repo.
-- Vault is content-first: animation project content resolves via aliases in `agent-context/intent/vault.md`.
+- Vault is content-first: animation project content resolves via aliases in `agent-context/intent/dependencies/vault.md`.
 - Read `project.config.ts` to get the adapter, variants, and routing for any project.
 - Look up the adapter in `agent-context/map/adapter-registry.md` to find the correct skills and commands.
 - Keep scripts and specs human-editable.
