@@ -2,6 +2,7 @@
 
 ## Lifecycle
 
+0. **Resume existing project:** run `resume-project` task → reads `{projects}/<name>/status.md` and reports current phase + next action.
 1. **Create project:** run `create-project` task → scaffolds `{projects}/<name>/` from `projects/_template/`. Pass `collection` to nest the project under a theme collection.
 2. **Script:** edit `{projects}/<name>/scripts/<variant>.script.md` or use `create-script` task.
 3. **Spec:** run `create-spec` task → creates `{projects}/<name>/specs/<variant>.spec.md`.
@@ -20,6 +21,8 @@
 
 | Request | Load First | Work In | Output |
 |---|---|---|---|
+| Resume / Continue project | `agent-context/tasks/resume-project.task.md` | (read-only) | Resume briefing: phase, last session, next action |
+| Update status / Refresh status | `agent-context/tasks/update-status.task.md` | `{projects}/<name>/status.md` | Updated status snapshot + history line |
 | Create new project | `agent-context/tasks/create-project.task.md` | `{projects}/<name>/` | Scaffolded project |
 | Create theme collection | `agent-context/tasks/create-collection.task.md` | `{projects}/<collection>/_theme/` | Theme package (`@studio/theme-<collection>`) |
 | Create project in collection | `agent-context/tasks/create-project.task.md` (pass `collection` input) | `{projects}/<collection>/<name>/` | Scaffolded project wired to theme package |

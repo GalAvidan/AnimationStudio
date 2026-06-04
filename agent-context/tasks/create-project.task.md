@@ -57,6 +57,11 @@ The user wants to start a new animation project from scratch.
    - If it does **not** exist: scaffold it as a minimal theme package (see `agent-context/map/folders.md` for the structure) and run `pnpm install` once scaffolding is done.
    - Add `"@studio/theme-<collection>": "workspace:*"` to the project's `package.json` dependencies.
 8. Run `pnpm install` from the repo root (the `projects/*` and `projects/*/*` globs auto-include the new project).
+9. Run `update-status` for the new project with:
+   - `phase`: `created`
+   - `next action`: "Create a script draft for the default variant"
+   - `session summary`: "Project scaffold created"
+   - `variant updates`: initialize each listed variant row in `status.md`.
 
 ## Report to User
 
