@@ -19,6 +19,10 @@ The user wants to inspect the animation locally.
 4. Report the local preview URL.
 5. As the final step, call `update-status` to record:
 	- `phase`: `previewed`
+	- run outcome:
+	  - `lastPreviewStatus`: `success` or `failed`
+	  - `lastPreviewCommand`: expanded preview command used for the run
+	  - `lastPreviewedAt`: ISO timestamp
 	- `next action`: "Render output or apply focused revisions"
 	- `session summary`: one-line preview result note.
 

@@ -28,6 +28,18 @@ _(optional context notes)_
 
 ---
 
+## Latest run outcomes
+
+- lastPreviewStatus: —
+- lastPreviewCommand: —
+- lastPreviewedAt: —
+- lastRenderStatus: —
+- lastRenderOutput: —
+- lastRenderManifest: —
+- lastRenderedAt: —
+
+---
+
 ## State history
 
 Append-only. One line per `update-status` refresh. Never overwrite this section.
