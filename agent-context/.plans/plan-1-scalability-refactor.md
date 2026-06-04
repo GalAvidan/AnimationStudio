@@ -113,7 +113,7 @@ AnimationStudio/
 |-- references/                   # Shared external research and archived legacy narratives
 |-- package.json                  # Workspace root scripts (lint, typecheck, build, clean)
 |-- pnpm-workspace.yaml           # Workspace globs: packages/*, projects/*, !projects/_template
-`-- README.md, AGENTS.md, CLAUDE.md, BOT.md, CONTEXT.md, REFERENCES.md   # Agent entry adapters
+`-- README.md, AGENTS.md, CLAUDE.md, bot.md, context.md, references.md   # Agent entry adapters
 ```
 
 Root `scripts/`, `specs/`, `assets/`, and `output/` are no longer active workflow folders after this plan.
@@ -399,9 +399,9 @@ export default config;
     - `AGENTS.md`
     - `CLAUDE.md`
     - `.github/copilot-instructions.md` (create this file if absent)
-    - `BOT.md`
-    - `CONTEXT.md`
-    - `REFERENCES.md`
+    - `bot.md`
+    - `context.md`
+    - `references.md`
 29. Update `agent-context/intent/conventions.md`, `agent-context/map/folders.md`, and `agent-context/map/workflow.md`.
 30. Add ADR `agent-context/intent/decisions/0003-self-contained-projects-and-workspace-tooling.md` using the required ADR section outline:
 
@@ -439,9 +439,9 @@ export default config;
 | `AGENTS.md` | Point agents to project-contained workflow folders and new skill paths |
 | `CLAUDE.md` | Same routing update as AGENTS |
 | `.github/copilot-instructions.md` | Same routing update for Copilot; create if absent |
-| `BOT.md` | Refresh identity/rules for self-contained projects |
-| `CONTEXT.md` | Remove old root artifact model |
-| `REFERENCES.md` | Update package manager and adapter references |
+| `bot.md` | Refresh identity/rules for self-contained projects |
+| `context.md` | Remove old root artifact model |
+| `references.md` | Update package manager and adapter references |
 | `README.md` | New structure diagram and quickstart |
 | `.gitignore` | Per-project output ignores |
 | `agent-context/intent/conventions.md` | Canonical naming and project layout |
@@ -501,7 +501,7 @@ Each check has the exact command(s) used to verify it.
 - [ ] Workspace installs cleanly: `pnpm -w install`
 - [ ] Workspace lints and typechecks: `pnpm -w run lint && pnpm -w run typecheck`
 - [ ] `_template` is not treated as a workspace package: `pnpm -r list --depth -1` does not list `projects/_template`
-- [ ] No active docs/tasks route new work to root `scripts/`, `specs/`, `assets/`, or `output/`: `rg -n "(^|[[:space:]`])(?:scripts|specs|assets|output)/|root `(scripts|specs|assets|output)/`|root (scripts|specs|assets|output)" agent-context README.md AGENTS.md CLAUDE.md BOT.md CONTEXT.md REFERENCES.md` returns no active routing references outside explicit legacy/deletion notes
+- [ ] No active docs/tasks route new work to root `scripts/`, `specs/`, `assets/`, or `output/`: `rg -n "(^|[[:space:]`])(?:scripts|specs|assets|output)/|root `(scripts|specs|assets|output)/`|root (scripts|specs|assets|output)" agent-context README.md AGENTS.md CLAUDE.md bot.md context.md references.md` returns no active routing references outside explicit legacy/deletion notes
 - [ ] `create-project` scaffolds: run the task with name `test-project` and verify `projects/test-project/project.config.ts`, `scripts/general.script.md`, `specs/general.spec.md`, `props/general.json`, `assets/`, `src/`, `output/` all exist
 - [ ] Scaffolded project previews: `pnpm --filter ./projects/test-project dev` starts and serves the studio
 - [ ] Scaffolded project renders: `pnpm --filter ./projects/test-project render -- --props=./props/general.json` produces `projects/test-project/output/general.mp4`

@@ -7,8 +7,8 @@ The user wants to change an existing animation by beat, timestamp, scene, or vis
 ## Load
 
 1. Load `agent-context/intent/dependencies/vault.md`.
-1. Read `project.config.ts` to determine `adapter`.
-2. Look up the adapter row in `agent-context/map/adapter-registry.md`.
+2. Read `project.config.ts` to determine `adapter`.
+3. Look up the adapter row in `agent-context/map/adapter-registry.md`.
 3. Load `agent-context/skills/core/revision-workflow.skill.md`.
 4. Load all skills in `agent-context/skills/adapters/<adapter>/`.
 5. Load the relevant spec from `{projects}/<name>/specs/<variant>.spec.md`.

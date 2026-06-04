@@ -2,7 +2,7 @@
 
 ## Lifecycle
 
-1. **Create project:** run `create-project` task → scaffolds `{projects}/<name>/` from `projects/_template/`.
+1. **Create project:** run `create-project` task → scaffolds `{projects}/<name>/` from `projects/_template/`. Pass `collection` to nest the project under a theme collection.
 2. **Script:** edit `{projects}/<name>/scripts/<variant>.script.md` or use `create-script` task.
 3. **Spec:** run `create-spec` task → creates `{projects}/<name>/specs/<variant>.spec.md`.
 4. **Audio plan** *(optional):* run `create-audio-plan` task → creates `{projects}/<name>/audio/plan.json` with voice profiles and music moods. Gate: user approval before any TTS runs.
@@ -14,12 +14,15 @@
 10. **Preview:** run `pnpm --filter @studio/project-<name> dev` or use `preview` task.
 11. **Render:** run `pnpm --filter @studio/project-<name> render -- --props=./props/<variant>.json` or use `render` task.
 12. **Revise:** run `revise-animation` task → edits spec or code based on beat-level feedback.
+13. **Archive:** run `archive-project` task when the project is complete or paused. Restore with `rehydrate-project`.
 
 ## Folder Routing
 
 | Request | Load First | Work In | Output |
 |---|---|---|---|
 | Create new project | `agent-context/tasks/create-project.task.md` | `{projects}/<name>/` | Scaffolded project |
+| Create theme collection | `agent-context/tasks/create-collection.task.md` | `{projects}/<collection>/_theme/` | Theme package (`@studio/theme-<collection>`) |
+| Create project in collection | `agent-context/tasks/create-project.task.md` (pass `collection` input) | `{projects}/<collection>/<name>/` | Scaffolded project wired to theme package |
 | Turn idea into script | `agent-context/tasks/create-script.task.md` | `{projects}/<name>/scripts/` | `<variant>.script.md` |
 | Turn script into spec | `agent-context/tasks/create-spec.task.md` | `{projects}/<name>/specs/` | `<variant>.spec.md` |
 | Create audio plan | `agent-context/tasks/create-audio-plan.task.md` | `{projects}/<name>/audio/` | `audio/plan.json` |
@@ -30,7 +33,10 @@
 | Build animation | `agent-context/tasks/build-animation.task.md` | `{projects}/<name>/src/` | Animation source files |
 | Revise animation | `agent-context/tasks/revise-animation.task.md` | `{projects}/<name>/specs/` and `src/` | Updated spec or code |
 | Preview | `agent-context/tasks/preview.task.md` | `{projects}/<name>/` | Running preview |
-| Render | `agent-context/tasks/render.task.md` | `{projects}/<name>/` | `output/<variant>.mp4` |
+| Render | `agent-context/tasks/render.task.md` | `{projects}/<name>/` | `{projects}/<name>/output/<variant>.mp4` |
+| Archive project | `agent-context/tasks/archive-project.task.md` | `Vault/AnimationStudio/archive/projects/<name>/` | Archived project tree + updated index |
+| Restore from archive | `agent-context/tasks/rehydrate-project.task.md` | `{projects}/<name>/` | Restored project tree |
+| Campaign-aware project | `agent-context/tasks/create-project.task.md` + `agent-context/skills/cross/campaign-resolution.skill.md` | `{projects}/<name>/` + `Vault/campaigns/{slug}/` | Scaffolded project with frozen campaign aliases |
 
 ## Adapter Resolution
 

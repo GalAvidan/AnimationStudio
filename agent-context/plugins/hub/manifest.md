@@ -6,20 +6,22 @@ studio_name: AnimationStudio
 project_root_alias: "{projects}"
 
 status:
-  source_path: c:\Git\AnimationStudio\CONTEXT.md
+  source_path: c:\Git\AnimationStudio\context.md
   read_mode: file
 
 current_work:
-  source_path: c:\Git\Vault\AnimationStudio\archive\projects
+  source_path: c:\Git\Vault\AnimationStudio\projects
   read_mode: directory-index
+  empty_note: "No active projects. All prior work is archived at Vault/AnimationStudio/archive/projects/."
 
 blockers:
-  source_path: c:\Git\AnimationStudio\CONTEXT.md
+  source_path: c:\Git\AnimationStudio\context.md
   read_mode: file
 
 recent_activity:
-  source_path: c:\Git\Vault\AnimationStudio\archive\projects
+  source_path: c:\Git\Vault\AnimationStudio\projects
   read_mode: directory-index
+  empty_note: "No recent activity. Check Vault/AnimationStudio/archive/projects/ for archived work."
 
 bounds:
   max_files_per_query: 10
@@ -28,9 +30,10 @@ bounds:
 
 security:
   allow_paths:
-    - c:\Git\AnimationStudio\CONTEXT.md
+    - c:\Git\AnimationStudio\context.md
     - c:\Git\AnimationStudio\agent-context\intent\overview.md
     - c:\Git\AnimationStudio\agent-context\map\
+    - c:\Git\Vault\AnimationStudio\projects\
     - c:\Git\Vault\AnimationStudio\archive\projects\
   deny_paths:
     - c:\Git\AnimationStudio\agent-context\intent\dependencies\
@@ -42,9 +45,8 @@ confidence_rules:
   status_confidence: medium
 
 notes: >
-  AnimationStudio currently has no active projects; all prior work is archived at
-  Vault/AnimationStudio/archive/projects/. Status is read from CONTEXT.md.
-  Blockers are embedded in CONTEXT.md under "What To Avoid" and current-project notes.
-  Active-project detection: look for folders under Vault/AnimationStudio/projects/ (not archive).
-  When active projects exist, update current_work source_path to c:\Git\Vault\AnimationStudio\projects\.
+  current_work and recent_activity read from Vault/AnimationStudio/projects/ (the live content root).
+  When that folder is empty, Hub should report "no active projects" and point to the archive.
+  Archive path: Vault/AnimationStudio/archive/projects/.
+  Status and blockers are read from context.md.
 ---
