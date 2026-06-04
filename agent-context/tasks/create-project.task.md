@@ -51,13 +51,17 @@ The user wants to start a new animation project from scratch.
    - Copy `agent-context/templates/script.template.md` to `<target>/scripts/<variant>.script.md`.
    - Copy `agent-context/templates/spec.template.md` to `<target>/specs/<variant>.spec.md`.
    - Create `<target>/props/<variant>.json` with content `{}`.
-6. In `<target>/package.json`, replace `@studio/project-template` with `@studio/project-<name>`.
-7. If a collection was provided:
+6. Initialize project coordination files:
+   - Copy `agent-context/templates/decisions.template.md` to `<target>/decisions.md`.
+   - Copy `agent-context/templates/handoff.template.md` to `<target>/handoff.md`.
+   - Copy `agent-context/templates/notes.template.md` to `<target>/notes.md`.
+7. In `<target>/package.json`, replace `@studio/project-template` with `@studio/project-<name>`.
+8. If a collection was provided:
    - Check whether `projects/<collection>/_theme/` already exists.
    - If it does **not** exist: scaffold it as a minimal theme package (see `agent-context/map/folders.md` for the structure) and run `pnpm install` once scaffolding is done.
    - Add `"@studio/theme-<collection>": "workspace:*"` to the project's `package.json` dependencies.
-8. Run `pnpm install` from the repo root (the `projects/*` and `projects/*/*` globs auto-include the new project).
-9. Run `update-status` for the new project with:
+9. Run `pnpm install` from the repo root (the `projects/*` and `projects/*/*` globs auto-include the new project).
+10. Run `update-status` for the new project with:
    - `phase`: `created`
    - `next action`: "Create a script draft for the default variant"
    - `session summary`: "Project scaffold created"

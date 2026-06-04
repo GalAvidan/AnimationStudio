@@ -31,10 +31,12 @@ The user wants to move a completed or paused project from the active projects ro
    - Archive path: `Vault/AnimationStudio/archive/projects/<slug>/`
    - Adapter and variants at time of archive.
    - Any outstanding TODOs from `project.config.ts` or spec files.
-5. Before reporting completion, ensure status context is captured:
+5. If `Vault/AnimationStudio/archive/projects/<slug>/decisions.md` exists, fold unresolved or reversible decisions into `manifest/rehydration-map.md` under "Open decisions to revisit".
+6. If `Vault/AnimationStudio/archive/projects/<slug>/notes.md` exists, promote any entries marked `reusable: yes` into `agent-context/patterns/index.md` with category hints (`motion`, `scene`, or `audio`).
+7. Before reporting completion, ensure status context is captured:
    - If `Vault/AnimationStudio/archive/projects/<slug>/status.md` exists, append a final history line with phase `done/archived`.
    - If it does not exist, note this in `rehydration-map.md` so resume context can be rebuilt on restore.
-6. Report the archive path and the archive-index row that was added.
+8. Report the archive path and the archive-index row that was added.
 
 ## Failure Modes
 
