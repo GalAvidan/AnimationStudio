@@ -1,3 +1,9 @@
+---
+status: Draft
+approvedBy:
+approvedDate:
+---
+
 # Spec: <Project Title> — <Variant> Audience
 
 ## Project

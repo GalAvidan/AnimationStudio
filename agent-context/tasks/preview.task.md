@@ -17,6 +17,10 @@ The user wants to inspect the animation locally.
 2. From the adapter registry, get the `preview cmd` for this adapter.
 3. Run the `preview cmd` from the adapter registry row, substituting `<name>`, from the repo root.
 4. Report the local preview URL.
+5. As the final step, call `update-status` to record:
+	- `phase`: `previewed`
+	- `next action`: "Render output or apply focused revisions"
+	- `session summary`: one-line preview result note.
 
 ## Ask If Missing
 

@@ -21,6 +21,7 @@ Before doing project work, load these files in order:
 - Vault is content-first: animation project content resolves via aliases in `agent-context/intent/dependencies/vault.md`.
 - Read `project.config.ts` to get the adapter, variants, and routing for any project.
 - Look up the adapter in `agent-context/map/adapter-registry.md` to find the correct skills and commands.
+- For existing projects, run `resume-project` first to load current state from `{projects}/<name>/status.md`.
 - Keep scripts and specs human-editable.
 - Prefer the workflow: Script → Spec → Build → Preview → Render → Revise.
 - Ask before creating files outside the documented folders.

@@ -19,6 +19,11 @@ The user wants a video or still export.
 3. Confirm `{projects}/<name>/props/<variant>.json` exists and contains valid props.
 4. Run from the repo root the `render cmd` from the adapter registry row, substituting `<name>` and `<variant>`.
 5. Verify the output file at `{projects}/<name>/output/<variant>.mp4`.
+6. As the final step, call `update-status` to record:
+	- `phase`: `rendered`
+	- variant update: `rendered = yes` for `<variant>`
+	- `next action`: "Review output and decide whether revisions are needed"
+	- `session summary`: one-line render result note.
 
 ## Ask If Missing
 

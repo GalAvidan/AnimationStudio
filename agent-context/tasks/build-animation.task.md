@@ -23,6 +23,11 @@ The user has an approved spec and wants to build an animation project.
 5. Implement the composition with stable IDs inside `{projects}/<name>/src/`.
 6. Keep scene code in `src/scenes/` and reusable components in `src/components/`.
 7. Report the preview command from the adapter registry.
+8. As the final step, call `update-status` to record:
+	- `phase`: `built`
+	- variant update: `built = yes` for `<variant>`
+	- `next action`: "Preview the build and capture revision notes"
+	- `session summary`: one-line build progress note.
 
 ## Ask If Missing
 
