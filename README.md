@@ -82,25 +82,3 @@ pnpm -w run build       # build all packages
 5. Preview: `pnpm --filter ./projects/<name> dev`
 6. Render: `pnpm --filter ./projects/<name> render -- --props=./props/<variant>.json`
 7. Revise by scene, beat, timestamp, or visual intent.
-
-
-```powershell
-npm install
-npm run dev
-```
-
-Render the starter composition:
-
-```powershell
-npx remotion render src/index.ts ExplainerStarter ../../output/explainer-starter.mp4
-```
-
-On Windows, avoid inline JSON props in shell commands. Use a props JSON file when props are needed.
-
-## First Good Test
-
-Use `scripts/explainer-starter_script.md` and ask an agent:
-
-> Turn this script into a spec, then tell me what Remotion scenes you would build before writing code.
-
-That checks whether the workflow is doing its real job: making the explanation clearer before implementation starts.

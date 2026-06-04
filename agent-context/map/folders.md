@@ -42,6 +42,15 @@
 
 - `references/`: shared external research and archived legacy narratives.
 
+## Campaign Membership
+
+A project may declare campaign membership in its `project.config.ts` via a `campaign.slug` field. This is optional — projects without it are standalone.
+
+- Campaign content lives in `Vault/campaigns/{campaign-slug}/` — never in this repo.
+- Path aliases (`{campaign_root}`, `{campaign_shared}`, `{campaign_chars}`, etc.) are defined in `agent-context/intent/dependencies/campaign.md`.
+- Alias resolution rules (including `CAMPAIGN_NOT_FOUND` fallback) are defined in `agent-context/skills/cross/campaign-resolution.skill.md`.
+- The Hub plugin routes campaign-aware work via the same `{projects}` root; campaign paths are additive, not structural alternatives.
+
 ## Deprecated / Deleted
 
 The following root folders existed before the Plan 1 clean-slate refactor and have been removed:

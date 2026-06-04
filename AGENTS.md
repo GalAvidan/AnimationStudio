@@ -6,7 +6,7 @@ This repository is an agent-assisted workflow for creating explanatory animation
 
 Before doing project work, load these files in order:
 
-1. `agent-context/intent/vault.md`
+1. `agent-context/intent/dependencies/vault.md`
 2. `agent-context/intent/overview.md`
 3. `agent-context/map/workflow.md`
 4. `agent-context/intent/conventions.md`

@@ -44,3 +44,7 @@ Run `pnpm --filter ./projects/<name> dev` from the repo root.
 ## Render
 
 Run `pnpm --filter ./projects/<name> render -- --props=./props/<variant>.json` from the repo root. Always pass props via a JSON file on Windows to avoid shell-escaping issues.
+
+## Adapter Coverage Note
+
+This is the only skill file for the Remotion adapter. The Motion Canvas adapter has four skill files (composition, scene, tweening, character-rig). Build and render tasks load "all adapter skills" from `skills/adapters/<adapter>/` — for Remotion that means this file only. This gap is intentional for v1 (see ADR 0002). If Remotion projects need scene-authoring or tweening guidance, add `scene.skill.md` and `tweening.skill.md` here following the Motion Canvas files as a template.
