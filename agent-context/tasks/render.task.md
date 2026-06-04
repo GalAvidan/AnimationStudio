@@ -45,7 +45,16 @@ The user wants a video or still export.
 - Project name and variant
 - Output format if not mp4
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 - Rendered video at `{projects}/<name>/output/<variant>.mp4`.
 - Render provenance at `{projects}/<name>/output/<variant>.manifest.json`.

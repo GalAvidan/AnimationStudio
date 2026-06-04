@@ -41,6 +41,15 @@ The user wants to turn a script into an animation spec.
 - Voiceover or music assumptions
 - For narrative projects: the cast (character ids and labels) if not already in `project.config.ts`
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 A reviewed creative direction spec at `{projects}/<name>/specs/<variant>.spec.md`, ready for a build.

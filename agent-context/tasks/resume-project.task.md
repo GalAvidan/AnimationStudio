@@ -59,6 +59,15 @@ Then: `Recommended task: <task-name>`.
 | Project folder missing | Suggest `create-project` and stop |
 | status.md missing | Suggest `update-status` and stop |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Read-only resume briefing for the requested project.

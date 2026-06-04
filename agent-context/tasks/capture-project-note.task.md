@@ -27,6 +27,15 @@ The user wants to capture a reusable lesson or observation during build/revision
    - `observation`, `impact`, `reusable` fields.
 3. If `reusable: yes`, mention that archive flow should promote it to `agent-context/patterns/`.
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Updated `{projects}/<name>/notes.md` with a new append-only note.

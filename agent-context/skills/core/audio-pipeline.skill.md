@@ -16,6 +16,25 @@ Spec (approved)
 
 The compiled timeline becomes the **single source of truth** for audio layout in the Remotion composition.
 
+## Inputs
+
+- Approved spec (`specs/<variant>.spec.md`) with beats and sync points.
+- `audio/plan.json` with voice/music/sfx intent.
+- Generated narration/alignment artifacts when available.
+
+## Outputs
+
+- Deterministic `audio/compiled.timeline.json` ready for composition mounting.
+- Resolved narration/music/sfx file references and timing anchors.
+- Clear failure reports when assets/anchors are missing.
+
+## Failure Modes
+
+- Missing or invalid `audio/plan.json`.
+- Missing narration/audio assets referenced by plan/timeline.
+- Invalid sync anchor references (missing sync id or word index).
+- License/source metadata absent for selected music or SFX assets.
+
 ---
 
 ## Five-Layer Architecture

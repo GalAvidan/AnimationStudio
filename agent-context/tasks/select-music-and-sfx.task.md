@@ -60,8 +60,17 @@ Do not use any source that requires a paid subscription or API key with a billin
 - Every selected track/clip must have a confirmed free license. If uncertain, do not download — ask the user.
 - Record `sourceUrl` and `license` in `plan.json` for every asset. Missing attribution is a blocker for `compile-timeline`.
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 - Downloaded files in `audio/music/` and `audio/sfx/`.
 - Updated `plan.json` with resolved `trackRef`, `fileRef`, `sourceUrl`, and `license` fields.
 

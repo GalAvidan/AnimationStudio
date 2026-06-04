@@ -35,6 +35,15 @@ The user wants to restore an archived project back to the active projects root f
 | Slug not found in archive | Stop and report |
 | Target path already exists under `{projects}/` | Stop and report; do not overwrite |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Project tree restored to `{projects}/<slug>/`, rehydration-log updated.

@@ -4,6 +4,23 @@
 
 Align visual events to narration, music, or declared sync points.
 
+## Inputs
+
+- Beat map or timeline with sync points.
+- Composition frame rate.
+- Requested visual events that must align.
+
+## Outputs
+
+- Sync mapping from semantic points to frame positions.
+- Alignment guidance and tolerance notes for implementation.
+
+## Failure Modes
+
+- Sync point id referenced by animation but missing from the spec/timeline.
+- Frame rate unknown when converting time to frames.
+- Conflicting timing constraints that require user confirmation.
+
 ## Rules
 
 - Treat audio and narration sync points as the source of truth.

@@ -83,8 +83,17 @@ the same output for the same inputs.
 
 Never silently drop audio — fail loudly with the missing path.
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 `{projects}/<name>/audio/compiled.timeline.json` — the final merged timeline.
 
 ## How the Remotion Composition Uses This File

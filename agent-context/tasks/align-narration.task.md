@@ -57,8 +57,17 @@ Narration WAV clips have been generated and the user wants word-level timestamps
 - Word timestamps are 0-based relative to the start of each clip (not absolute video time). The `compile-timeline` task adds the beat's `startSeconds` offset.
 - This task is non-interactive and safe to re-run; it overwrites existing alignment files.
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Alignment JSON files at `{projects}/<name>/audio/alignment/<beatId>.json` for each processed beat.
 
 ## Next Step

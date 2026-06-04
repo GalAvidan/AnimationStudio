@@ -4,6 +4,23 @@
 
 Author specs and scripts for animations that have **named characters delivering lines** and explicit **scene transitions**. Adapter-agnostic.
 
+## Inputs
+
+- Script/spec draft containing dialogue beats.
+- Cast definitions from `project.config.ts` and/or spec.
+- Transition markers from script prose (`[TRANSITION: ...]`).
+
+## Outputs
+
+- Consistent narrative fields (`speaker`, `emotion`, `characters`) across script/spec/config.
+- Scene-boundary transition guidance suitable for adapter implementation.
+
+## Failure Modes
+
+- `speaker` ids that do not match cast ids.
+- Transition markers that are unsupported or malformed.
+- Emotion tags that conflict with available rig presets and need clarification.
+
 ## When to Use
 
 - The project has 2+ characters who speak.

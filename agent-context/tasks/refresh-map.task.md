@@ -28,6 +28,15 @@ The folder structure, projects, packages, or adapter registry has changed and th
 - Each project under `{projects}/` is self-contained. Do not route new work to root `scripts/`, `specs/`, `assets/`, or `output/` — those folders no longer exist.
 - `projects/_template/` is a scaffolding source, not an active project.
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Updated map files reflecting the current repository shape.

@@ -56,6 +56,15 @@
 | Project folder missing | Stop and report |
 | Invalid phase value | Stop and list allowed lifecycle values |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Updated `{projects}/<name>/status.md` with current lifecycle state and append-only history.

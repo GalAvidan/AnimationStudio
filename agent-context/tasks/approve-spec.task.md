@@ -45,6 +45,15 @@ The spec has been reviewed and is ready to be used by `build-animation`.
 | Spec file missing | Stop and report |
 | Required frontmatter missing | Stop and report; fix the spec template before approving |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 Approved spec at `{projects}/<slug>/specs/<variant>.spec.md` ready for build.

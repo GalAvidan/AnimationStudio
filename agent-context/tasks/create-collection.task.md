@@ -41,6 +41,15 @@ The user wants to create a new theme collection that future projects can belong 
 | Invalid collection slug | Stop and report |
 | `_theme/` already exists | Stop and report; suggest using `create-project` instead |
 
-## Output
+## Preconditions
 
+- Required inputs are provided and resolve to valid project paths.
+- Files listed in the task's Load section are available.
+- Validation checks in this task pass before execution continues.
+
+## Produces
+
+- The primary artifact(s) listed in this task's Output section.
+- Any explicit status/history updates described in this task.
+## Output
 `{projects}/<collection>/_theme/` scaffolded and ready for `pnpm install`.
