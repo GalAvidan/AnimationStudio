@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Different agents read different instruction files. Claude may read `CLAUDE.md`, Copilot reads `.github/copilot-instructions.md`, and generic agents may read `AGENTS.md`.
+Different agents read different instruction files. Claude may read `CLAUDE.md`, Copilot reads `.github/copilot-instructions.md`, and generic agents may read `agents.md`.
 
 If each file contains separate project rules, they will drift.
 

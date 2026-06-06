@@ -39,7 +39,7 @@ references/             Shared research and archived narratives
 
 Different agents read different instruction files. These are adapters — shared rules live in `agent-context/`:
 
-- `AGENTS.md` — generic agent adapter
+- `agents.md` — generic agent adapter
 - `CLAUDE.md` — Claude adapter
 - `.github/copilot-instructions.md` — Copilot adapter
 - `bot.md`, `context.md`, `references.md` — human-friendly project context

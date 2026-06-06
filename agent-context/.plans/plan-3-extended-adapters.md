@@ -58,7 +58,7 @@
 - [ ] `agent-context/intent/decisions/0005-default-adapter-choice.md`
   - Motion Canvas as default for new 2D projects and why
   - When to choose Three.js vs in-house-2d
-- [ ] Update `README.md` — adapter section with all four adapters and links
+- [ ] Update `readme.md` — adapter section with all four adapters and links
 - [ ] Update `references.md` — Three.js docs, Playwright docs
 
 ---

@@ -125,7 +125,7 @@ Deliverable:
 
 1. Create `agent-context/intent/vault.md` for AnimationStudio.
 2. Update Studio root/docs to load and honor vault contract:
-   - `AGENTS.md`
+   - `agents.md`
   - `context.md`
    - `agent-context/intent/overview.md`
    - `agent-context/intent/conventions.md`

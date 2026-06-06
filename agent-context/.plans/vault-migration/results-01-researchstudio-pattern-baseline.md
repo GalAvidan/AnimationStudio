@@ -22,7 +22,7 @@ Capture the implemented split pattern from ResearchStudio as the baseline standa
 
 The following files are authoritative proof inputs for this baseline:
 
-- `Vault/agent-context/.plans/stodio_data_migration/PLAN.md`
+- `Vault/agent-context/.plans/stodio_data_migration/plan.md`
 - `Vault/agent-context/.plans/stodio_data_migration/researchStudio_migration_lab.md`
 - `ResearchStudio/agent-context/intent/vault.md`
 
@@ -34,7 +34,7 @@ The folder `ResearchStudio/agent-context/.plans/vault-migration/` is locator-onl
 
 1. The folder `ResearchStudio/agent-context/.plans/vault-migration/` is currently empty.
 2. The effective migration plan artifacts are in Vault under:
-   - `Vault/agent-context/.plans/stodio_data_migration/PLAN.md`
+   - `Vault/agent-context/.plans/stodio_data_migration/plan.md`
    - `Vault/agent-context/.plans/stodio_data_migration/researchStudio_migration_lab.md`
 3. ResearchStudio has already implemented alias-based content routing via `agent-context/intent/vault.md`.
 4. ResearchStudio tasks are now largely alias-based (`{projects}`, `{knowledge}`), with framework exceptions (such as `_template`) retained locally.
@@ -70,14 +70,14 @@ Additive aliases are studio-specific (for example `{knowledge}`, `{assets}`, `{s
 | Check | Owner | Pass condition |
 |---|---|---|
 | Vault contract exists and parses | Repo maintainer | `agent-context/intent/vault.md` loads without syntax errors |
-| Contract is loaded first | Root adapter owner | `AGENTS.md` load order places the vault contract before task/map files |
+| Contract is loaded first | Root adapter owner | `agents.md` load order places the vault contract before task/map files |
 | Tasks/skills/maps use aliases | Content owner | No unapproved bare content paths remain in the reviewed scope |
 | Framework paths remain local | Framework owner | `agent-context/`, `references/`, and template paths stay unchanged |
 | Pilot validation passes | Migration owner | install, typecheck, build, preview, and render all succeed for the pilot |
 
 ### 2) Contract-first load order
 
-Root adapter (`AGENTS.md`) must load vault contract first, before lifecycle/task files.
+Root adapter (`agents.md`) must load vault contract first, before lifecycle/task files.
 
 ### 3) Alias-only content paths in tasks/skills/maps
 

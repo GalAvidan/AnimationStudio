@@ -90,7 +90,7 @@ Notes:
 
 Update these files so split ownership is explicit and consistent:
 
-- `AGENTS.md`
+- `agents.md`
 - `context.md`
 - `agent-context/intent/overview.md`
 - `agent-context/intent/conventions.md`

@@ -103,7 +103,7 @@ If one person fills multiple roles, role responsibilities still apply as separat
 4. Generate `manifest/checksums.sha256` for archived files.
 5. Write `manifest/rehydration-map.md` describing how each markdown record maps to future active structure.
 6. Create an index at:
-   - `Vault/AnimationStudio/archive/ARCHIVE_INDEX.md`
+   - `Vault/AnimationStudio/archive/ARCHIVE_index.md`
 
 ### Deliverables
 

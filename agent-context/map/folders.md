@@ -2,11 +2,11 @@
 
 ## Root
 
-- `AGENTS.md`: generic agent adapter.
+- `agents.md`: generic agent adapter.
 - `CLAUDE.md`: Claude adapter.
 - `.github/copilot-instructions.md`: Copilot adapter.
 - `bot.md`, `context.md`, `references.md`: human-friendly project context.
-- `README.md`: repository guide for humans.
+- `readme.md`: repository guide for humans.
 - `package.json`: workspace root with `lint`, `typecheck`, `build`, `clean` scripts.
 - `pnpm-workspace.yaml`: declares `packages/*`, `projects/*`, and `projects/*/*` globs (excludes `projects/_template` and `projects/_template-motion-canvas`).
 - `.prettierrc`: root Prettier config, applies everywhere.

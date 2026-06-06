@@ -113,7 +113,7 @@ AnimationStudio/
 |-- references/                   # Shared external research and archived legacy narratives
 |-- package.json                  # Workspace root scripts (lint, typecheck, build, clean)
 |-- pnpm-workspace.yaml           # Workspace globs: packages/*, projects/*, !projects/_template
-`-- README.md, AGENTS.md, CLAUDE.md, bot.md, context.md, references.md   # Agent entry adapters
+`-- readme.md, agents.md, CLAUDE.md, bot.md, context.md, references.md   # Agent entry adapters
 ```
 
 Root `scripts/`, `specs/`, `assets/`, and `output/` are no longer active workflow folders after this plan.
@@ -394,9 +394,9 @@ export default config;
 
 ### Phase E - Documentation and Conventions
 
-27. Update root `README.md` with the new structure, clean-slate project model, create-project quickstart, and `pnpm`-based preview/render commands.
+27. Update root `readme.md` with the new structure, clean-slate project model, create-project quickstart, and `pnpm`-based preview/render commands.
 28. Update agent adapter files:
-    - `AGENTS.md`
+    - `agents.md`
     - `CLAUDE.md`
     - `.github/copilot-instructions.md` (create this file if absent)
     - `bot.md`
@@ -436,13 +436,13 @@ export default config;
 
 | File | Change |
 |---|---|
-| `AGENTS.md` | Point agents to project-contained workflow folders and new skill paths |
+| `agents.md` | Point agents to project-contained workflow folders and new skill paths |
 | `CLAUDE.md` | Same routing update as AGENTS |
 | `.github/copilot-instructions.md` | Same routing update for Copilot; create if absent |
 | `bot.md` | Refresh identity/rules for self-contained projects |
 | `context.md` | Remove old root artifact model |
 | `references.md` | Update package manager and adapter references |
-| `README.md` | New structure diagram and quickstart |
+| `readme.md` | New structure diagram and quickstart |
 | `.gitignore` | Per-project output ignores |
 | `agent-context/intent/conventions.md` | Canonical naming and project layout |
 | `agent-context/map/folders.md` | New folder map |
@@ -501,14 +501,14 @@ Each check has the exact command(s) used to verify it.
 - [ ] Workspace installs cleanly: `pnpm -w install`
 - [ ] Workspace lints and typechecks: `pnpm -w run lint && pnpm -w run typecheck`
 - [ ] `_template` is not treated as a workspace package: `pnpm -r list --depth -1` does not list `projects/_template`
-- [ ] No active docs/tasks route new work to root `scripts/`, `specs/`, `assets/`, or `output/`: `rg -n "(^|[[:space:]`])(?:scripts|specs|assets|output)/|root `(scripts|specs|assets|output)/`|root (scripts|specs|assets|output)" agent-context README.md AGENTS.md CLAUDE.md bot.md context.md references.md` returns no active routing references outside explicit legacy/deletion notes
+- [ ] No active docs/tasks route new work to root `scripts/`, `specs/`, `assets/`, or `output/`: `rg -n "(^|[[:space:]`])(?:scripts|specs|assets|output)/|root `(scripts|specs|assets|output)/`|root (scripts|specs|assets|output)" agent-context readme.md agents.md CLAUDE.md bot.md context.md references.md` returns no active routing references outside explicit legacy/deletion notes
 - [ ] `create-project` scaffolds: run the task with name `test-project` and verify `projects/test-project/project.config.ts`, `scripts/general.script.md`, `specs/general.spec.md`, `props/general.json`, `assets/`, `src/`, `output/` all exist
 - [ ] Scaffolded project previews: `pnpm --filter ./projects/test-project dev` starts and serves the studio
 - [ ] Scaffolded project renders: `pnpm --filter ./projects/test-project render -- --props=./props/general.json` produces `projects/test-project/output/general.mp4`
 - [ ] `create-script` writes to `projects/test-project/scripts/general.script.md` (verified by file timestamp / git status after running task)
 - [ ] `create-spec` writes to `projects/test-project/specs/general.spec.md` (same verification method)
 - [ ] `build-animation`, `preview`, `render`, and `revise-animation` all resolve the project through `project.config.ts` (manual review of task files: each references reading `project.config.ts` before any work)
-- [ ] No stale references to deleted example projects in active guidance: `rg -n "explainer-starter|animation-studio-explained|project1-how-ai-chat-works" agent-context README.md AGENTS.md CLAUDE.md` returns no results outside `.plans/` and `references/`
+- [ ] No stale references to deleted example projects in active guidance: `rg -n "explainer-starter|animation-studio-explained|project1-how-ai-chat-works" agent-context readme.md agents.md CLAUDE.md` returns no results outside `.plans/` and `references/`
 - [ ] Deletion safety: `git tag -l pre-clean-slate` returns the tag; current branch is `refactor/clean-slate`
 - [ ] Temporary scaffold cleanup: remove `projects/test-project/` after scaffold, preview, render, create-script, and create-spec verification.
 

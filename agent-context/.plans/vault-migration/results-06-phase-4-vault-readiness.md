@@ -25,7 +25,7 @@ Status: PASS
 
 ## Ownership Boundary Confirmation
 
-Updated `c:/Git/Vault/AnimationStudio/README.md` to state:
+Updated `c:/Git/Vault/AnimationStudio/readme.md` to state:
 - Vault area is content-first source of truth
 - AnimationStudio repo remains framework-first
 - physical move remains blocked until dependency gate sign-off and validation

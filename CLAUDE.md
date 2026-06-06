@@ -1,6 +1,6 @@
 # Claude Adapter
 
-This repository uses a model-agnostic context contract. Read `AGENTS.md` first, then use `agent-context/` as the canonical source of truth.
+This repository uses a model-agnostic context contract. Read `agents.md` first, then use `agent-context/` as the canonical source of truth.
 
 ## Required Routing
 
