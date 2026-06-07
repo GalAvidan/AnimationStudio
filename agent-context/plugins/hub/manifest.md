@@ -6,20 +6,20 @@ studio_name: AnimationStudio
 project_root_alias: "{projects}"
 
 status:
-  source_path: c:\Git\AnimationStudio\context.md
+  source_path: AnimationStudio/context.md
   read_mode: file
 
 current_work:
-  source_path: c:\Git\Vault\AnimationStudio\projects
+  source_path: Vault/AnimationStudio/projects
   read_mode: directory-index
   empty_note: "No active projects. All prior work is archived at Vault/AnimationStudio/archive/projects/."
 
 blockers:
-  source_path: c:\Git\AnimationStudio\context.md
+  source_path: AnimationStudio/context.md
   read_mode: file
 
 recent_activity:
-  source_path: c:\Git\Vault\AnimationStudio\projects
+  source_path: Vault/AnimationStudio/projects
   read_mode: directory-index
   empty_note: "No recent activity. Check Vault/AnimationStudio/archive/projects/ for archived work."
 
@@ -30,16 +30,16 @@ bounds:
 
 security:
   allow_paths:
-    - c:\Git\AnimationStudio\context.md
-    - c:\Git\AnimationStudio\agent-context\intent\overview.md
-    - c:\Git\AnimationStudio\agent-context\map\
-    - c:\Git\Vault\AnimationStudio\projects\
-    - c:\Git\Vault\AnimationStudio\archive\projects\
+    - AnimationStudio/context.md
+    - AnimationStudio/agent-context/intent/overview.md
+    - AnimationStudio/agent-context/map/
+    - Vault/AnimationStudio/projects/
+    - Vault/AnimationStudio/archive/projects/
   deny_paths:
-    - c:\Git\AnimationStudio\agent-context\intent\dependencies\
-    - c:\Git\AnimationStudio\packages\
+    - AnimationStudio/agent-context/intent/dependencies/
+    - AnimationStudio/packages/
     - .git\
-    - c:\Git\Vault\AnimationStudio\archive\projects\character-pilot\manifest\
+    - Vault/AnimationStudio/archive/projects/character-pilot/manifest/
 
 confidence_rules:
   status_confidence: medium
