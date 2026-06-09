@@ -40,7 +40,7 @@
 | Revise animation | `agent-context/tasks/revise-animation.task.md` | `{projects}/<name>/specs/` and `src/` | Updated spec or code |
 | Preview | `agent-context/tasks/preview.task.md` | `{projects}/<name>/` | Running preview |
 | Render | `agent-context/tasks/render.task.md` | `{projects}/<name>/` | `{projects}/<name>/output/<variant>.mp4` + `{projects}/<name>/output/<variant>.manifest.json` |
-| Archive project | `agent-context/tasks/archive-project.task.md` | `Vault/AnimationStudio/archive/projects/<name>/` | Archived project tree + updated index |
+| Archive project | `agent-context/tasks/archive-project.task.md` | `Vault/studios/AnimationStudio/archive/projects/<name>/` | Archived project tree + updated index |
 | Restore from archive | `agent-context/tasks/rehydrate-project.task.md` | `{projects}/<name>/` | Restored project tree |
 | Campaign-aware project | `agent-context/tasks/create-project.task.md` + `agent-context/skills/cross/campaign-resolution.skill.md` | `{projects}/<name>/` + `Vault/campaigns/{slug}/` | Scaffolded project with frozen campaign aliases |
 
@@ -54,3 +54,4 @@
 ## Current Projects
 
 *(Updated by the `refresh-map` task as projects are added.)*
+
