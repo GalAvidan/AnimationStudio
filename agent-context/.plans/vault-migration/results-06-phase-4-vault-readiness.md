@@ -5,7 +5,7 @@ Scope: Vault receiving structure and ignore-rule readiness only
 
 ## Required Structure Check
 
-Checked under `c:/Git/Vault/AnimationStudio/`:
+Checked under `c:/Git/Vault/studios/AnimationStudio/`:
 - `projects/` -> present
 - `assets/` -> present
 - `scripts/` -> present
@@ -25,7 +25,7 @@ Status: PASS
 
 ## Ownership Boundary Confirmation
 
-Updated `c:/Git/Vault/AnimationStudio/readme.md` to state:
+Updated `c:/Git/Vault/studios/AnimationStudio/readme.md` to state:
 - Vault area is content-first source of truth
 - AnimationStudio repo remains framework-first
 - physical move remains blocked until dependency gate sign-off and validation
@@ -39,3 +39,4 @@ Status: PASS
 - Migration run stops before any Phase 5 pilot move.
 
 Overall Phase 4 result: PASS
+

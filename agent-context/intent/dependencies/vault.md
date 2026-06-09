@@ -7,9 +7,9 @@ Content store for AnimationStudio projects, assets, and scripts.
 vaultRoot: c:\Git\Vault
 studioName: AnimationStudio
 
-{projects}: {vaultRoot}\{studioName}\projects
-{assets}: {vaultRoot}\{studioName}\assets
-{scripts}: {vaultRoot}\{studioName}\scripts
+{projects}: {vaultRoot}\studios\{studioName}\projects
+{assets}: {vaultRoot}\studios\{studioName}\assets
+{scripts}: {vaultRoot}\studios\{studioName}\scripts
 
 ## Rules
 

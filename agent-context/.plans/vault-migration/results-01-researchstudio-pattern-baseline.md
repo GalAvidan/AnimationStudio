@@ -129,8 +129,8 @@ Migrate one low-risk project first, validate end-to-end, then migrate remaining 
 ## Decision Notes for AnimationStudio
 
 1. Keep templates in AnimationStudio.
-2. Move project content to `Vault/AnimationStudio/projects/<project-name>/`.
-3. Add shared `assets/` and optional shared `scripts/` under `Vault/AnimationStudio/`.
+2. Move project content to `Vault/studios/AnimationStudio/projects/<project-name>/`.
+3. Add shared `assets/` and optional shared `scripts/` under `Vault/studios/AnimationStudio/`.
 4. Do not move projects physically while `@studio/*` package resolution remains `workspace:*`-bound without an approved model.
 
 ---

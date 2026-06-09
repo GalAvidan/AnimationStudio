@@ -36,10 +36,10 @@ Adopt the same split model as ResearchStudio:
   - `references/`
   - root workspace/build tooling
 - Vault repository owns AnimationStudio content:
-  - `Vault/AnimationStudio/projects/<project-name>/`
-  - `Vault/AnimationStudio/assets/` (shared reusable project assets/themes)
-  - `Vault/AnimationStudio/scripts/` (optional shared scripts area; project-local scripts remain inside each migrated project)
-  - optional future `Vault/AnimationStudio/library/` for reusable clip/audio/script packs
+  - `Vault/studios/AnimationStudio/projects/<project-name>/`
+  - `Vault/studios/AnimationStudio/assets/` (shared reusable project assets/themes)
+  - `Vault/studios/AnimationStudio/scripts/` (optional shared scripts area; project-local scripts remain inside each migrated project)
+  - optional future `Vault/studios/AnimationStudio/library/` for reusable clip/audio/script packs
 
 ---
 
@@ -60,7 +60,7 @@ Adopt the same split model as ResearchStudio:
 | Decision | Choice | Rationale |
 |---|---|---|
 | Migration pattern | Reuse ResearchStudio alias contract pattern | Proven and minimizes broad rewrites |
-| Canonical studio-content root | `Vault/AnimationStudio/` | Mirrors `Vault/ResearchStudio/` |
+| Canonical studio-content root | `Vault/studios/AnimationStudio/` | Mirrors `Vault/studios/ResearchStudio/` |
 | Physical migration strategy | Pilot 1 project, then waves | Reduces blast radius |
 | Template projects | Stay in AnimationStudio | Templates are framework scaffolding |
 | Package strategy gate | Hard block before physical move | Projects depend on `@studio/*` via `workspace:*` |
@@ -171,9 +171,9 @@ Deliverable:
 ### Phase 4 - Vault Receiving Structure
 
 1. Ensure Vault structure exists:
-   - `Vault/AnimationStudio/projects/`
-   - `Vault/AnimationStudio/assets/`
-   - `Vault/AnimationStudio/scripts/` (optional)
+   - `Vault/studios/AnimationStudio/projects/`
+   - `Vault/studios/AnimationStudio/assets/`
+   - `Vault/studios/AnimationStudio/scripts/` (optional)
 2. Update Vault ignore rules for animation artifacts (video/audio/generated intermediates).
 3. Confirm ownership boundaries in Vault docs.
 
@@ -188,7 +188,7 @@ Deliverable:
   - no unresolved `workspace:*` dependency questions after Phase 3
   - minimal shared asset/script coupling
   - existing install/typecheck/build/preview/render commands are already documented
-2. Move pilot project to `Vault/AnimationStudio/projects/<project>/`.
+2. Move pilot project to `Vault/studios/AnimationStudio/projects/<project>/`.
 3. Validate end-to-end:
    - install
    - typecheck
@@ -280,3 +280,4 @@ Deliverable:
 - Keep migration PRs small and reviewable.
 - Record every exception decision in a short migration log entry.
 - If dependency gate remains unresolved, continue only through Phases 0-2 and 4; stop before Phase 5.
+

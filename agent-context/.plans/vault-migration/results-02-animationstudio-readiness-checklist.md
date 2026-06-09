@@ -207,9 +207,9 @@ Exit criteria:
 
 Create or confirm:
 
-- `Vault/AnimationStudio/projects/`
-- `Vault/AnimationStudio/assets/`
-- `Vault/AnimationStudio/scripts/` (optional)
+- `Vault/studios/AnimationStudio/projects/`
+- `Vault/studios/AnimationStudio/assets/`
+- `Vault/studios/AnimationStudio/scripts/` (optional)
 
 ### 4.2 Update ignore rules
 

@@ -45,10 +45,10 @@ Use an archive location that is separate from the active Studio tree and clearly
 
 Suggested shape:
 
-- `Vault/AnimationStudio/archive/projects/`
-- `Vault/AnimationStudio/archive/specs/`
-- `Vault/AnimationStudio/archive/plans/`
-- `Vault/AnimationStudio/archive/notes/`
+- `Vault/studios/AnimationStudio/archive/projects/`
+- `Vault/studios/AnimationStudio/archive/specs/`
+- `Vault/studios/AnimationStudio/archive/plans/`
+- `Vault/studios/AnimationStudio/archive/notes/`
 
 If a simpler structure is preferred, keep a single archive root and preserve the original project folder names inside it.
 
@@ -161,3 +161,4 @@ This option is strongest when the current tree is considered too coupled to be w
 3. The new Studio structure is documented and loaded by default.
 4. One project can be reintroduced from the archive without reusing legacy layout assumptions.
 5. The archive remains clearly separated from active work.
+

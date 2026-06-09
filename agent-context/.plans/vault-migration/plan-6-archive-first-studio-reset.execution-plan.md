@@ -11,7 +11,7 @@
 
 Use one and only one archive topology:
 
-- `Vault/AnimationStudio/archive/projects/<project-slug>/`
+- `Vault/studios/AnimationStudio/archive/projects/<project-slug>/`
 
 Inside each project slug:
 
@@ -91,9 +91,9 @@ If one person fills multiple roles, role responsibilities still apply as separat
 ### Actions
 
 1. Create canonical archive directories:
-   - `Vault/AnimationStudio/archive/projects/<project-slug>/markdown/`
-   - `Vault/AnimationStudio/archive/projects/<project-slug>/manifest/`
-   - `Vault/AnimationStudio/archive/projects/<project-slug>/notes/`
+   - `Vault/studios/AnimationStudio/archive/projects/<project-slug>/markdown/`
+   - `Vault/studios/AnimationStudio/archive/projects/<project-slug>/manifest/`
+   - `Vault/studios/AnimationStudio/archive/projects/<project-slug>/notes/`
 2. Move/copy project markdown records into each `markdown/` folder.
 3. Write per-project `manifest/archive-manifest.json` with:
    - source path
@@ -103,7 +103,7 @@ If one person fills multiple roles, role responsibilities still apply as separat
 4. Generate `manifest/checksums.sha256` for archived files.
 5. Write `manifest/rehydration-map.md` describing how each markdown record maps to future active structure.
 6. Create an index at:
-   - `Vault/AnimationStudio/archive/ARCHIVE_index.md`
+   - `Vault/studios/AnimationStudio/archive/ARCHIVE_index.md`
 
 ### Deliverables
 
