@@ -4,14 +4,18 @@ This repository is an agent-assisted workflow for creating explanatory animation
 
 ## First Read
 
-Before doing project work, load these files in order:
+**Start with the minimal context profile** — see `agent-context/intent/context-profiles.md`.
+Use `agent-context/map/load-order.md` for the exact file sequence for your workflow.
+
+Default load order:
 
 1. `agent-context/intent/dependencies/vault.md`
 2. `agent-context/intent/overview.md`
-3. `agent-context/map/workflow.md`
-4. `agent-context/intent/conventions.md`
-5. Any task file in `agent-context/tasks/` that matches the user's request
-6. Any skill files referenced by that task (core skills from `agent-context/skills/core/`, adapter skills from `agent-context/skills/adapters/<adapter>/`)
+3. `agent-context/intent/anti-goals-brief.md`
+4. `agent-context/map/workflow.md` — only once task type is known
+5. The matching task from `agent-context/tasks/` (use `agent-context/map/tasks-index.md` to find it)
+6. Skills listed in the task's `Skills:` block (use `agent-context/map/skills-index.md` to locate them)
+7. `agent-context/intent/conventions.md` — only if creating or renaming files
 
 ## Operating Rules
 

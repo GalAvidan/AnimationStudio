@@ -28,6 +28,13 @@ bounds:
   max_lines_per_file: 150
   max_depth: 2
 
+token_budget:
+  context_profile: task
+  startup_files_minimal: 3
+  startup_files_task: 8
+  escalation_trigger: "gap confirmed after minimal load"
+  max_output_tokens: 2000
+
 security:
   allow_paths:
     - Studios/AnimationStudio/context.md
