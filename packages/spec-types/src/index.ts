@@ -85,6 +85,10 @@ export interface ProjectConfig {
   /** kebab-case, must match folder name under projects/ */
   slug: string;
   title: string;
+  /** optional Vault commission ID when this project originates from a commission */
+  commissionId?: string;
+  /** optional curriculum class identifier for downstream acceptance traceability */
+  classId?: string;
   adapter: AdapterName;
   /** must match a variants[].id */
   defaultVariant: string;

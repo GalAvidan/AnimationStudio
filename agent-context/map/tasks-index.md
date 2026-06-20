@@ -66,6 +66,15 @@ Quick-reference registry. Read this instead of listing or scanning `tasks/`.
 
 ---
 
+## Exchange commission flow
+
+| Task | File | Purpose |
+|---|---|---|
+| intake-commission-request | `intake-commission-request.task.md` | Convert sender request into canonical receiver-owned inbox record |
+| emit-commission-response | `emit-commission-response.task.md` | Emit done/failed response and update exchange indexes |
+
+---
+
 ## Collection / meta
 
 | Task | File | Purpose |

@@ -21,6 +21,7 @@ The user wants to validate a project before building or rendering, or when `buil
 
 1. Confirm `{projects}/<slug>/` exists. Stop with a clear message if not found.
 2. Read `{projects}/<slug>/project.config.ts` to get `adapter`, `variants`, `collection` (if any), and `campaign` (if any).
+   - Also read optional `commissionId` and `classId` linkage fields.
 3. **Adapter check:** look up `adapter` in `agent-context/map/adapter-registry.md`.
    - If the adapter is not in the registry, stop and list all valid adapter names.
 4. **Variants check:** for each variant in `variants`:
@@ -38,7 +39,10 @@ The user wants to validate a project before building or rendering, or when `buil
 8. **Status check:**
    - If `{projects}/<slug>/status.md` exists, report current phase and next action.
    - If `status.md` is missing, report a warning and recommend running `update-status`.
-9. Report pass or fail:
+9. **Commission linkage check:**
+   - If `classId` is present and `commissionId` is missing, report ❌ `COMMISSION_LINKAGE_MISSING` and stop.
+   - If `commissionId` is present, confirm a matching commission exists in `Vault/studios/commissions/cmsn-*.md`; warn if missing.
+10. Report pass or fail:
    - **Pass:** list all checks as ✅ and recommend the next task (`build-animation` or `preview`).
    - **Fail:** list each failing check as ❌ with the specific file path missing or the invalid value found. Do not proceed to build.
 
@@ -53,6 +57,7 @@ The user wants to validate a project before building or rendering, or when `buil
 | Missing compiled timeline (when referenced) | List as ❌; stop |
 | Campaign not found | Warn only — do not stop |
 | Missing status.md | Warn and recommend `update-status`; do not stop |
+| classId present but commissionId missing | Stop with `COMMISSION_LINKAGE_MISSING` |
 
 ## Preconditions
 

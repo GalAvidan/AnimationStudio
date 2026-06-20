@@ -19,6 +19,8 @@ The user wants to start a new animation project from scratch.
 | Short subject | — | Required. One sentence describing what the animation explains. |
 | Variants | `general` | Comma-separated list of variant IDs (e.g. `general,dev`). |
 | Adapter | `motion-canvas` | Must match a row in the adapter registry. |
+| Commission ID | *(none)* | Optional `cmsn-NNNN` when project is created from a commission request. |
+| Class ID | *(none)* | Optional curriculum class identifier (`cls-NNN-...`). |
 | Collection | *(none)* | Optional. Kebab-case name of an existing theme collection (e.g. `mathematical-theorems`). If provided, the project is created under `{projects}/<collection>/<name>/` and the theme package is wired up automatically. |
 
 ## Validation
@@ -48,6 +50,8 @@ The user wants to start a new animation project from scratch.
    - `defaultVariant`: first variant in the list
    - `variants`: one entry per variant with `id`, `audience` (same as id), `script`, `spec`, `output`, `compositionId` (PascalCase slug + PascalCase variant)
    - `video`: `{ width: 1920, height: 1080, fps: 30 }`
+   - `commissionId`: include when input provided
+   - `classId`: include when input provided
 5. For each variant:
    - Copy `agent-context/templates/script.template.md` to `<target>/scripts/<variant>.script.md`.
    - Copy `agent-context/templates/spec.template.md` to `<target>/specs/<variant>.spec.md`.
