@@ -16,6 +16,10 @@ const config: ProjectConfig = {
     },
   ],
   video: { width: 1920, height: 1080, fps: 30 },
+  paletteSource: {
+    sourcePath: "src/data/palettes.ts",
+    defaultPaletteId: "clean-light",
+  },
 };
 
 export default config;

@@ -52,6 +52,33 @@ export const fonts = {
 
 Change any default when the collection's visual identity requires it. Document the rationale in a comment inside `src/index.ts`.
 
+## Palette Viewer Compatibility
+
+To support visual palette review in project previews, a collection theme package
+may also export additional named palettes in a `paletteSets` array:
+
+```typescript
+import type { PaletteSet } from "@studio/spec-types";
+
+export const paletteSets: PaletteSet[] = [
+  {
+    id: "clean-light",
+    label: "Clean Light",
+    tokens: {
+      background: "#f5f7fb",
+      surface: "#ffffff",
+      textPrimary: "#0f172a",
+      textSecondary: "#475569",
+      accent: "#0f766e",
+      accentText: "#ecfeff",
+    },
+  },
+];
+```
+
+Projects can then mirror these values into `src/data/palettes.ts` or directly
+re-export them as their `paletteSource` contract.
+
 ## Failure Modes
 
 | Condition | Action |
