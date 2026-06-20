@@ -7,6 +7,7 @@ Agents resolve `<adapter>` from `project.config.ts`, then look up the matching r
 |---|---|---|---|---|---|---|---|
 | remotion | direct per-project deps; no shared adapter package in Plan 1 | Remotion license | 2d,audio,vector | skills/adapters/remotion/ | pnpm --filter @studio/project-<name> dev | pnpm --filter @studio/project-<name> render -- --props=./props/\<variant\>.json | stable |
 | motion-canvas | packages/adapter-motion-canvas | MIT | 2d,audio,vector | skills/adapters/motion-canvas/ | pnpm --filter @studio/project-<name> dev | pnpm --filter @studio/project-<name> build | experimental |
+| manim | direct per-project deps (uv/pip) | MIT | 2d,3d,audio,vector | skills/adapters/manim/ | uv run manim render -ql -p src/scenes/\<variant\>.py \<CompositionId\> | uv run manim render -qh src/scenes/\<variant\>.py \<CompositionId\> | experimental |
 
 ## Usage by Agents and Tasks
 

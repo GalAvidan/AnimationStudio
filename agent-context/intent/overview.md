@@ -26,9 +26,12 @@ Script -> Spec -> Build -> Preview -> Render -> Revise
 
 Rendering adapters are interchangeable. `project.config.ts` in each project selects the adapter via the `adapter` field. Agents look up the adapter row in `agent-context/map/adapter-registry.md` to find the correct skills directory, preview command, and render command.
 
-- **Motion Canvas** (MIT) — default for all new 2D projects. Generator-based timelines map cleanly to the beat/sync model.
+- **Motion Canvas** (MIT) — default for new 2D projects. Generator-based timelines map cleanly to the beat/sync model. Best for character animation, branded explainers, and UI walkthroughs.
+- **Manim CE** (MIT) — Python-based mathematical and scientific animation. Best for: equations, algorithm visualization, 3D diagrams, and geometric constructions. Uses `uv` for dependency management; projects live outside the pnpm workspace.
 - **Remotion** (Remotion license) — retained for existing projects only. No new projects should use Remotion.
 - Three.js and in-house adapters are planned for Plan 3.
+
+Use `agent-context/skills/adapter-selection.skill.md` when choosing an adapter for a new project.
 
 ## Agent Behavior
 

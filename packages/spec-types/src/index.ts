@@ -1,4 +1,4 @@
-export type AdapterName = "remotion" | "motion-canvas";
+export type AdapterName = "remotion" | "motion-canvas" | "manim";
 
 export interface CampaignRef {
   /** kebab-case campaign slug; must match a folder in Vault/campaigns/ */
