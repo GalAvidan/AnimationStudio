@@ -13,6 +13,33 @@ export interface VideoConfig {
   fps: number;
 }
 
+export interface PaletteTokens {
+  background: string;
+  surface: string;
+  textPrimary: string;
+  textSecondary: string;
+  accent: string;
+  accentText: string;
+}
+
+export interface PaletteSet {
+  /** kebab-case unique identifier within one palette source */
+  id: string;
+  /** human-readable label shown in preview UIs */
+  label: string;
+  /** optional reviewer-facing notes */
+  description?: string;
+  /** semantic color tokens used by preview samples */
+  tokens: PaletteTokens;
+}
+
+export interface PaletteSourceConfig {
+  /** path relative to project root, e.g. "src/data/palettes.ts" */
+  sourcePath: string;
+  /** optional default id selected in palette preview */
+  defaultPaletteId?: string;
+}
+
 export interface ProjectVariant {
   /** kebab-case, unique within project */
   id: string;
@@ -64,6 +91,8 @@ export interface ProjectConfig {
   /** length >= 1 */
   variants: ProjectVariant[];
   video: VideoConfig;
+  /** optional palette preview source for visual direction review */
+  paletteSource?: PaletteSourceConfig;
   /** optional cast for narrative / character-driven projects */
   characters?: CharacterRef[];
   /**

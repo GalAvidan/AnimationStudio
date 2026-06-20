@@ -99,6 +99,26 @@ Each animation project keeps code organized by role:
 - `src/components/` contains reusable visual components.
 - `src/data/` contains derived timing or copy data.
 
+## Palette Preview Data
+
+Projects that support visual palette review should keep a canonical palette source
+at `src/data/palettes.ts` and wire the path in `project.config.ts`:
+
+```ts
+paletteSource: {
+  sourcePath: "src/data/palettes.ts",
+  defaultPaletteId: "clean-light",
+}
+```
+
+`src/data/palettes.ts` should export one or more `PaletteSet` objects with
+semantic token keys (`background`, `surface`, `textPrimary`, `textSecondary`,
+`accent`, `accentText`). Keep values in hex format for consistency.
+
+When present, add a dedicated preview composition/scene (for example
+`ProjectNamePalettePreview`) so reviewers can validate color direction before
+rendering a full video.
+
 ## Assets
 
 For SVG and layered assets, use descriptive IDs and layer names:

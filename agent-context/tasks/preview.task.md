@@ -40,5 +40,20 @@ The user wants to inspect the animation locally.
 
 - The primary artifact(s) listed in this task's Output section.
 - Any explicit status/history updates described in this task.
+
+## Palette Preview Mode (Optional)
+
+When `project.config.ts` includes `paletteSource`, also verify that a dedicated
+palette preview composition/scene is available in the project entrypoint.
+Use this mode when the user asks to review color direction before full render.
+
+Expected behavior:
+
+- reviewers can switch between multiple named palettes within one preview run,
+- semantic token swatches are visible,
+- a representative sample frame updates with the selected palette.
+
+This mode is additive and must not block normal animation preview.
+
 ## Output
 A running animation studio preview.
