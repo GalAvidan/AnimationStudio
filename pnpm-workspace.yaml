@@ -3,3 +3,4 @@ packages:
   - "projects/*"
   - "!projects/_template"
   - "!projects/_template-motion-canvas"
+  - "!projects/_template-manim"

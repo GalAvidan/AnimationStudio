@@ -21,6 +21,8 @@
 
 | Request | Load First | Work In | Output |
 |---|---|---|---|
+| Intake commission request | `agent-context/tasks/intake-commission-request.task.md` | `{exchange_inbox}` | Canonical request with receiver-assigned `request_id` + updated indexes |
+| Emit commission response | `agent-context/tasks/emit-commission-response.task.md` | `{exchange_outbox}` | Response file + requester inbox mirror + updated indexes |
 | Resume / Continue project | `agent-context/tasks/resume-project.task.md` | (read-only) | Resume briefing: phase, last session, next action |
 | Update status / Refresh status | `agent-context/tasks/update-status.task.md` | `{projects}/<name>/status.md` | Updated status snapshot + history line |
 | Record decision | `agent-context/tasks/record-decision.task.md` | `{projects}/<name>/decisions.md` | Append-only project decision entry |

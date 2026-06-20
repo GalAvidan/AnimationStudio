@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+.env
+
+# Manim media output (uncomment to ignore rendered output)
+# output/
+
+# Manim voiceover cache
+media/voiceover/
+
+# uv lockfile (keep in version control for reproducibility)
+# uv.lock

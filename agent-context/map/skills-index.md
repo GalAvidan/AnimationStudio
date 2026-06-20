@@ -29,6 +29,18 @@ Quick-reference registry. Read this instead of scanning `skills/` subfolders.
 
 ---
 
+## adapters/manim — math, science, 3D projects
+
+| Skill | File | When to use |
+|---|---|---|
+| composition | `adapters/manim/composition.skill.md` | Project layout, commands, compositionId → class name mapping |
+| scene | `adapters/manim/scene.skill.md` | Writing Scene classes, animation primitives, timing, rate_func |
+| mobjects | `adapters/manim/mobjects.skill.md` | Shapes, text, MathTex, groups, positioning, styling |
+| voiceover | `adapters/manim/voiceover.skill.md` | Narration sync via manim-voiceover, beat mapping |
+| three_d | `adapters/manim/three_d.skill.md` | ThreeDScene, 3D Mobjects, camera movement |
+
+---
+
 ## adapters/remotion — legacy projects only
 
 | Skill | File | When to use |
@@ -43,3 +55,11 @@ Quick-reference registry. Read this instead of scanning `skills/` subfolders.
 |---|---|---|
 | campaign-resolution | `cross/campaign-resolution.skill.md` | Project declares a `campaign` field in config |
 | theme-collection | `cross/theme-collection.skill.md` | Applying a shared theme across a collection |
+
+---
+
+## (root) — cross-cutting guidance
+
+| Skill | File | When to use |
+|---|---|---|
+| adapter-selection | `adapter-selection.skill.md` | Choosing between Motion Canvas and Manim for a new project |

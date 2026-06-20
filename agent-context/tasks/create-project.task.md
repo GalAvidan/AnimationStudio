@@ -19,6 +19,8 @@ The user wants to start a new animation project from scratch.
 | Short subject | — | Required. One sentence describing what the animation explains. |
 | Variants | `general` | Comma-separated list of variant IDs (e.g. `general,dev`). |
 | Adapter | `motion-canvas` | Must match a row in the adapter registry. |
+| Commission ID | *(none)* | Optional `cmsn-NNNN` when project is created from a commission request. |
+| Class ID | *(none)* | Optional curriculum class identifier (`cls-NNN-...`). |
 | Collection | *(none)* | Optional. Kebab-case name of an existing theme collection (e.g. `mathematical-theorems`). If provided, the project is created under `{projects}/<collection>/<name>/` and the theme package is wired up automatically. |
 
 ## Validation
@@ -39,6 +41,7 @@ The user wants to start a new animation project from scratch.
 3. Copy the correct template based on adapter:
    - `remotion` → copy `projects/_template/` to the target path
    - `motion-canvas` → copy `projects/_template-motion-canvas/` to the target path
+   - `manim` → copy `projects/_template-manim/` to the target path
 4. In `<target>/project.config.ts`, replace the stub with real values:
    - `slug`: project name
    - `title`: title-cased subject
@@ -47,6 +50,8 @@ The user wants to start a new animation project from scratch.
    - `defaultVariant`: first variant in the list
    - `variants`: one entry per variant with `id`, `audience` (same as id), `script`, `spec`, `output`, `compositionId` (PascalCase slug + PascalCase variant)
    - `video`: `{ width: 1920, height: 1080, fps: 30 }`
+   - `commissionId`: include when input provided
+   - `classId`: include when input provided
 5. For each variant:
    - Copy `agent-context/templates/script.template.md` to `<target>/scripts/<variant>.script.md`.
    - Copy `agent-context/templates/spec.template.md` to `<target>/specs/<variant>.spec.md`.
@@ -55,12 +60,15 @@ The user wants to start a new animation project from scratch.
    - Copy `agent-context/templates/decisions.template.md` to `<target>/decisions.md`.
    - Copy `agent-context/templates/handoff.template.md` to `<target>/handoff.md`.
    - Copy `agent-context/templates/notes.template.md` to `<target>/notes.md`.
-7. In `<target>/package.json`, replace `@studio/project-template` with `@studio/project-<name>`.
-8. If a collection was provided:
+7. **Node.js adapters only (remotion, motion-canvas):** In `<target>/package.json`, replace `@studio/project-template` with `@studio/project-<name>`. Skip this step for `manim` (no `package.json`).
+8. **Node.js adapters only (remotion, motion-canvas):** If a collection was provided:
    - Check whether `projects/<collection>/_theme/` already exists.
    - If it does **not** exist: scaffold it as a minimal theme package (see `agent-context/map/folders.md` for the structure) and run `pnpm install` once scaffolding is done.
    - Add `"@studio/theme-<collection>": "workspace:*"` to the project's `package.json` dependencies.
-9. Run `pnpm install` from the repo root (the `projects/*` and `projects/*/*` globs auto-include the new project).
+   Skip this step for `manim` (collection theme packages are Node.js only).
+9. Install dependencies:
+   - **remotion / motion-canvas:** Run `pnpm install` from the repo root (the `projects/*` and `projects/*/*` globs auto-include the new project).
+   - **manim:** Run `uv sync` from `<target>/` (installs `manim` and `manim-voiceover` into a local `.venv`). Manim projects are outside the pnpm workspace.
 10. Run `update-status` for the new project with:
    - `phase`: `created`
    - `next action`: "Create a script draft for the default variant"
