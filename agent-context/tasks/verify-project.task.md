@@ -41,7 +41,7 @@ The user wants to validate a project before building or rendering, or when `buil
    - If `status.md` is missing, report a warning and recommend running `update-status`.
 9. **Commission linkage check:**
    - If `classId` is present and `commissionId` is missing, report ❌ `COMMISSION_LINKAGE_MISSING` and stop.
-   - If `commissionId` is present, confirm a matching commission exists in `Vault/studios/commissions/cmsn-*.md`; warn if missing.
+   - If `commissionId` is present, confirm a matching commission exists in `Vault/hub/hub-comunications-queues/commissions/cmsn-*.md`; warn if missing.
 10. Report pass or fail:
    - **Pass:** list all checks as ✅ and recommend the next task (`build-animation` or `preview`).
    - **Fail:** list each failing check as ❌ with the specific file path missing or the invalid value found. Do not proceed to build.

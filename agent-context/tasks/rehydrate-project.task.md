@@ -13,18 +13,18 @@ The user wants to restore an archived project back to the active projects root f
 
 | Input | Required | Notes |
 |---|---|---|
-| Project slug | Yes | Must match an existing folder under `Vault/studios/AnimationStudio/archive/projects/` |
+| Project slug | Yes | Must match an existing folder under `Vault/hub/studios/AnimationStudio/archive/projects/` |
 
 ## Validation
 
-- Confirm `Vault/studios/AnimationStudio/archive/projects/<slug>/` exists. If not, stop and report the slug was not found in the archive.
+- Confirm `Vault/hub/studios/AnimationStudio/archive/projects/<slug>/` exists. If not, stop and report the slug was not found in the archive.
 - Confirm `{projects}/<slug>/` does not already exist. If it does, stop and report the path collision — do not overwrite active work.
 
 ## Steps
 
-1. Read `Vault/studios/AnimationStudio/archive/projects/<slug>/manifest/rehydration-map.md` to confirm the original path, adapter, and variants.
-2. Move the entire `Vault/studios/AnimationStudio/archive/projects/<slug>/` tree back to `{projects}/<slug>/`.
-3. Append a rehydration entry to `Vault/studios/AnimationStudio/archive/rehydration-log.md`:
+1. Read `Vault/hub/studios/AnimationStudio/archive/projects/<slug>/manifest/rehydration-map.md` to confirm the original path, adapter, and variants.
+2. Move the entire `Vault/hub/studios/AnimationStudio/archive/projects/<slug>/` tree back to `{projects}/<slug>/`.
+3. Append a rehydration entry to `Vault/hub/studios/AnimationStudio/archive/rehydration-log.md`:
    - Columns: slug, rehydration date (YYYY-MM-DD), restored-to path, any notes.
 4. Report the restored path and the next recommended step (e.g., run `build-animation` or `preview`).
 

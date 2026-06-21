@@ -10,10 +10,10 @@
 
 1. `agent-context/intent/dependencies/vault.md`
 2. `agent-context/intent/conventions.md`
-3. `Vault/studios/exchange/_schemas/request.schema.md`
-4. `Vault/studios/exchange/_schemas/status-codes.md`
-5. `Vault/studios/exchange/_indexes/open-requests.md`
-6. `Vault/studios/exchange/_indexes/duplicate-guard.md`
+3. `Vault/hub/hub-comunications-queues/exchange/_schemas/request.schema.md`
+4. `Vault/hub/hub-comunications-queues/exchange/_schemas/status-codes.md`
+5. `Vault/hub/hub-comunications-queues/exchange/_indexes/open-requests.md`
+6. `Vault/hub/hub-comunications-queues/exchange/_indexes/duplicate-guard.md`
 
 ## Inputs
 
@@ -39,8 +39,8 @@
 ## Output
 
 - `{exchange_inbox}/<commission-id>-<request-id>-request.md`
-- `Vault/studios/exchange/_indexes/open-requests.md` (updated)
-- `Vault/studios/exchange/_indexes/duplicate-guard.md` (updated)
+- `Vault/hub/hub-comunications-queues/exchange/_indexes/open-requests.md` (updated)
+- `Vault/hub/hub-comunications-queues/exchange/_indexes/duplicate-guard.md` (updated)
 
 ## Failure Modes
 

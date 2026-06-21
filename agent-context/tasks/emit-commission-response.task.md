@@ -9,11 +9,11 @@
 ## Load
 
 1. `agent-context/intent/dependencies/vault.md`
-2. `Vault/studios/exchange/_schemas/response.schema.md`
-3. `Vault/studios/exchange/_schemas/status-codes.md`
-4. `Vault/studios/exchange/_indexes/open-requests.md`
-5. `Vault/studios/exchange/_indexes/duplicate-guard.md`
-6. `Vault/studios/exchange/_indexes/recent-completions.md`
+2. `Vault/hub/hub-comunications-queues/exchange/_schemas/response.schema.md`
+3. `Vault/hub/hub-comunications-queues/exchange/_schemas/status-codes.md`
+4. `Vault/hub/hub-comunications-queues/exchange/_indexes/open-requests.md`
+5. `Vault/hub/hub-comunications-queues/exchange/_indexes/duplicate-guard.md`
+6. `Vault/hub/hub-comunications-queues/exchange/_indexes/recent-completions.md`
 
 ## Inputs
 
@@ -33,7 +33,7 @@
 2. Build response frontmatter payload.
 3. If status is `failed`, enforce required failed payload fields.
 4. Write response to `{exchange_outbox}` with filename `<commission-id>-<request-id>-response.md`.
-5. Write mirrored response to requester inbox path (`Vault/studios/exchange/CurriculumStudio/inbox/` for Curriculum requests).
+5. Write mirrored response to requester inbox path (`Vault/hub/hub-comunications-queues/exchange/CurriculumStudio/inbox/` for Curriculum requests).
 6. Remove request row from `open-requests.md`.
 7. Remove duplicate tuple from `duplicate-guard.md`.
 8. Append row to `recent-completions.md`.
