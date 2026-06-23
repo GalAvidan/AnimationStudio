@@ -8,7 +8,7 @@ Quick-reference registry. Read this instead of listing or scanning `tasks/`.
 
 | Task | File | Purpose |
 |---|---|---|
-| create-script | `create-script.task.md` | Write a narration draft from scratch |
+| create-script | `create-script.task.md` | Write a production script from an idea or closed v3 content brief |
 | create-spec | `create-spec.task.md` | Create the visual spec from an approved script |
 | align-narration | `align-narration.task.md` | Align narration beats to visual spec |
 

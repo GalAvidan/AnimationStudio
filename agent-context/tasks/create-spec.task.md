@@ -17,6 +17,8 @@ The user wants to turn a script into an animation spec.
 ## Steps
 
 1. Read the script from `{projects}/<name>/scripts/<variant>.script.md`.
+   For curriculum commissions, confirm every `## Contract Verification` item is
+   checked before translating the script into visual direction.
 2. Identify the core message and audience.
 3. If the script has `[SPEAKER:]` markers, fill in the spec's **Cast** table and use the **Speaker** / **Emotion** columns in the Beat Map. Otherwise leave Cast blank and the Speaker column empty (narrator).
 4. Create a beat map with duration per beat (time on screen, e.g. `6s`, `400ms`). Do not use absolute timeline positions.

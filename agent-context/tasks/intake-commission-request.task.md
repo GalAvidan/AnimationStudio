@@ -2,50 +2,45 @@
 
 ## Use When
 
-- "Check animation inbox"
-- "Intake new commission request"
-- "Claim next queued request"
+- Check the animation inbox or claim a queued commission.
 
 ## Load
 
-1. `agent-context/intent/dependencies/vault.md`
-2. `agent-context/intent/conventions.md`
-3. `Vault/hub/hub-comunications-queues/exchange/_schemas/request.schema.md`
-4. `Vault/hub/hub-comunications-queues/exchange/_schemas/status-codes.md`
-5. `Vault/hub/hub-comunications-queues/exchange/_indexes/open-requests.md`
-6. `Vault/hub/hub-comunications-queues/exchange/_indexes/duplicate-guard.md`
+1. Vault dependency and exchange schemas/indexes.
+2. For CurriculumStudio requests, the CurriculumStudio dependency contract.
+3. The linked `animation-brief.md`.
 
-## Inputs
+## Validation
 
-| Input | Required | Notes |
-|---|---|---|
-| Source request file path | Yes | Path in sender outbox, usually CurriculumStudio outbox |
+- Request envelope has required identity and a unique
+  `commission_id + project_slug + episode_or_module` tuple.
+- Curriculum requests link an `as-out` v3 brief.
+- All v3 required sections exist.
+- The brief has an approved claim set, required example, correction, forbidden
+  claims, caveats, and acceptance checks.
+- No unresolved knowledge choice is assigned to AnimationStudio.
 
 ## Steps
 
-1. Confirm source request file exists and validates required schema fields.
-2. Build duplicate key tuple: `commission_id + project_slug + episode_or_module`.
-3. Check `duplicate-guard.md` for active matching tuple:
-   - If match exists, write failed response with `reason_code=DUPLICATE_REQUEST` and stop.
-4. Determine next sequential request ID for AnimationStudio inbox queue:
-   - Read existing canonical request files in `{exchange_inbox}`.
-   - Assign next ID in `rq-XXXX` format.
-5. Write canonical request file to `{exchange_inbox}` with filename `<commission-id>-<request-id>-request.md`.
-6. Set status to `processing` and update `updated_at`.
-7. Append row to `open-requests.md`.
-8. Append tuple to `duplicate-guard.md`.
-9. Mirror reference in `{exchange_outbox}` if needed for local audit.
+1. Validate the request and duplicate key.
+2. Validate the linked curriculum brief when present.
+3. Assign the next receiver-owned `rq-XXXX` ID.
+4. Write the canonical inbox request with status `processing` and preserve the
+   source brief link.
+5. Update open-request and duplicate-guard indexes.
+6. The next action is project creation followed by `create-script`; do not route
+   a v3 brief directly to `create-spec`.
+
+## Failures
+
+| Condition | Result |
+|---|---|
+| Missing request field or brief section | `BRIEF_INVALID` |
+| Unsupported major contract version | `HANDOFF_VERSION_MISMATCH` |
+| Unresolved subject-matter decision | `CONTENT_CONTRACT_INCOMPLETE` |
+| Duplicate tuple | `DUPLICATE_REQUEST` |
+| Commission not found | `COMMISSION_NOT_FOUND` |
 
 ## Output
 
-- `{exchange_inbox}/<commission-id>-<request-id>-request.md`
-- `Vault/hub/hub-comunications-queues/exchange/_indexes/open-requests.md` (updated)
-- `Vault/hub/hub-comunications-queues/exchange/_indexes/duplicate-guard.md` (updated)
-
-## Failure Modes
-
-| Condition | Action |
-|---|---|
-| Missing required schema field | Stop with `BRIEF_INVALID` |
-| Duplicate tuple open | Stop with `DUPLICATE_REQUEST` |
-| Commission not found | Stop with `COMMISSION_NOT_FOUND` |
+- Canonical inbox request and updated exchange indexes.

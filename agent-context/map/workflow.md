@@ -4,7 +4,8 @@
 
 0. **Resume existing project:** run `resume-project` task → reads `{projects}/<name>/status.md` and reports current phase + next action.
 1. **Create project:** run `create-project` task → scaffolds `{projects}/<name>/` from `projects/_template/`. Pass `collection` to nest the project under a theme collection.
-2. **Script:** edit `{projects}/<name>/scripts/<variant>.script.md` or use `create-script` task.
+2. **Script:** for curriculum commissions, validate the linked v3 content brief,
+   then use `create-script`; for standalone work, start from the user's idea.
 3. **Spec:** run `create-spec` task → creates `{projects}/<name>/specs/<variant>.spec.md`.
 4. **Audio plan** *(optional):* run `create-audio-plan` task → creates `{projects}/<name>/audio/plan.json` with voice profiles and music moods. Gate: user approval before any TTS runs.
 5. **Generate narration** *(optional):* run `generate-narration` task → produces `audio/narration/*.wav` using Piper (or chosen engine). Hash-cached per beat.
@@ -31,7 +32,7 @@
 | Create new project | `agent-context/tasks/create-project.task.md` | `{projects}/<name>/` | Scaffolded project |
 | Create theme collection | `agent-context/tasks/create-collection.task.md` | `{projects}/<collection>/_theme/` | Theme package (`@studio/theme-<collection>`) |
 | Create project in collection | `agent-context/tasks/create-project.task.md` (pass `collection` input) | `{projects}/<collection>/<name>/` | Scaffolded project wired to theme package |
-| Turn idea into script | `agent-context/tasks/create-script.task.md` | `{projects}/<name>/scripts/` | `<variant>.script.md` |
+| Turn idea or curriculum brief into script | `agent-context/tasks/create-script.task.md` | `{projects}/<name>/scripts/` | Traceable `<variant>.script.md` |
 | Turn script into spec | `agent-context/tasks/create-spec.task.md` | `{projects}/<name>/specs/` | `<variant>.spec.md` |
 | Create audio plan | `agent-context/tasks/create-audio-plan.task.md` | `{projects}/<name>/audio/` | `audio/plan.json` |
 | Generate narration | `agent-context/tasks/generate-narration.task.md` | `{projects}/<name>/audio/narration/` | `<beatId>.wav` per beat |

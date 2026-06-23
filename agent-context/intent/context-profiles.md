@@ -50,7 +50,7 @@ Load all `agent-context/`. Use `agent-context/map/skills-index.md` to decide whi
 | What is the current project status? | minimal | + `{projects}/<name>/status.md` |
 | Resume a project | task | `resume-project.task.md` |
 | Create a new project | task | `create-project.task.md` + `adapter-registry.md` |
-| Write / revise a script | task | `create-script.task.md` or `revise-animation.task.md` |
+| Write / revise a script | task | `create-script.task.md` or `revise-animation.task.md`; add the CurriculumStudio dependency and traceability skill for commissioned curricula |
 | Build from spec | task | `build-animation.task.md` + adapter skills |
 | Render output | task | `render.task.md` |
 | Archive a project | task | `archive-project.task.md` |

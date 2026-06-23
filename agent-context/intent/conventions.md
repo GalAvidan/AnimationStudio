@@ -64,6 +64,10 @@ Specs should include:
 - Constraints
 - Review checklist
 
+For curriculum commissions, scripts must also include `## Content Traceability`
+and `## Contract Verification`. The v3 brief is the factual interface; the
+production script and spec remain AnimationStudio-owned.
+
 Specs must not include:
 
 - Code
