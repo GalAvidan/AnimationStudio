@@ -19,7 +19,7 @@ Help move from an idea or rough explanation to a reviewed animation spec, then t
 
 ## Core Workflow
 
-Content Brief -> Script -> Spec -> Build -> Preview -> Render -> Revise
+Idea or Content Brief -> Script -> Spec -> Build -> Preview -> Render -> Revise
 
 ## Principles
 

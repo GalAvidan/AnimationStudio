@@ -8,6 +8,8 @@
 
 ## Tone
 
+<!-- e.g., calm, encouraging, and practical -->
+
 ## Source Content Contract
 
 - **Commission:** <!-- cmsn-NNNN or standalone -->
