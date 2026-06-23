@@ -10,6 +10,7 @@ Quick-reference registry. Read this instead of scanning `skills/` subfolders.
 |---|---|---|
 | audio-pipeline | `core/audio-pipeline.skill.md` | Designing or debugging the audio layer |
 | audio-sync | `core/audio-sync.skill.md` | Syncing narration to animation timeline |
+| content-contract-traceability | `core/content-contract-traceability.skill.md` | Writing a commissioned script from an as-out v3 brief |
 | motion-language | `core/motion-language.skill.md` | Choosing movement style and vocabulary |
 | narrative-structure | `core/narrative-structure.skill.md` | Structuring explanations into beats |
 | revision-workflow | `core/revision-workflow.skill.md` | Handling revision requests against a spec |

@@ -16,6 +16,7 @@
 - `agent-context/intent/`: purpose, decisions, conventions, glossary, and anti-goals.
 - `agent-context/map/`: folder map, workflow routing, and adapter registry.
 - `agent-context/skills/core/`: renderer-agnostic animation craft rules.
+  Includes `content-contract-traceability.skill.md` for commissioned curricula.
 - `agent-context/skills/adapters/<adapter>/`: renderer-specific skills, one folder per adapter.
 - `agent-context/tasks/`: reusable agent workflows.
 - `agent-context/templates/`: canonical script and spec skeletons.

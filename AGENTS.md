@@ -28,6 +28,9 @@ Default load order:
 - For existing projects, run `resume-project` first to load current state from `{projects}/<name>/status.md`.
 - Keep scripts and specs human-editable.
 - Prefer the workflow: Script → Spec → Build → Preview → Render → Revise.
+- For curriculum commissions, load the linked `as-out` v3 brief before scripting.
+  Treat its approved claims as a closed factual boundary; return incomplete
+  content instead of researching or inventing it.
 - Ask before creating files outside the documented folders.
 - Use `pnpm` for all commands. Never `npm`, `yarn`, or `npx` in scripts or docs.
 - Do not route new work to root `scripts/`, `specs/`, `assets/`, or `output/` — those folders no longer exist.

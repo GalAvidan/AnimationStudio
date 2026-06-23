@@ -2,37 +2,37 @@
 
 ## Working Title
 
-<!-- One-line description of what this animation explains -->
-
 ## Audience
-
-<!-- Who is watching? What do they already know? What do they need to leave with? -->
 
 ## Target Runtime
 
-<!-- e.g. ~60 seconds -->
-
 ## Tone
 
-<!-- e.g. Warm, confident, lightly technical. Diagram-over-decoration. -->
+<!-- e.g., calm, encouraging, and practical -->
+
+## Source Content Contract
+
+- **Commission:** <!-- cmsn-NNNN or standalone -->
+- **Brief:** <!-- exact as-out v3 path, or none -->
+- **Contract version:** <!-- 3.0.0 or standalone -->
 
 ---
 
 ## Script
 
-<!-- Write in plain language. One idea per paragraph.
+<!-- Plain-language production narration/dialogue. One idea per paragraph.
 
-     Available markers (all optional, use only when needed):
-       [VISUAL: ...]                   what the visuals should do for this paragraph
-       [SYNC: sync-point-id]           a visual event must land on this word
-       [SPEAKER: character-id]         attribute the next line to a named character
-                                       (omit for narrator; id matches project.config.ts
-                                       characters[].id and the Cast table in the spec)
-       [TRANSITION: fade 400ms]        scene transition between this paragraph and the
-                                       next (translates to the adapter's transition
-                                       primitive when scenes are registered)
+     Optional markers:
+       [BEAT: production-beat-id]
+       [VISUAL: creative direction]
+       [SYNC: sync-point-id]
+       [SPEAKER: character-id]
+       [TRANSITION: fade 400ms]
 
-     Keep narration short enough to speak aloud in the target runtime. -->
+     For commissioned work, factual content must remain inside the approved
+     claim set. Creative metaphor is welcome; new subject matter is not. -->
+
+[BEAT: production-beat-01]
 
 Opening — state the question or problem.
 
@@ -40,13 +40,22 @@ Opening — state the question or problem.
 
 ---
 
-<!-- Continue beat by beat. Each --- divides one screen's worth of attention. -->
-
-[SPEAKER: hero]
-Hero's first line goes here.
-
-[TRANSITION: fade 400ms]
-
 Closing — land the takeaway.
 
-[VISUAL: ...]
+## Content Traceability
+
+<!-- Required for as-out v3 commissions; remove for standalone projects. -->
+
+| Production beat | Content beat(s) | Approved claim(s) | Acceptance check(s) covered |
+|---|---|---|---|
+| production-beat-01 | beat-01-* | clm-*@1.0 | |
+
+## Contract Verification
+
+- [ ] Every factual statement maps to an approved claim.
+- [ ] Every content-beat acceptance check is covered.
+- [ ] Required example is preserved.
+- [ ] Misconception correction lands clearly.
+- [ ] Caveats are preserved.
+- [ ] No forbidden claim or implication appears.
+- [ ] No external subject-matter research was required.

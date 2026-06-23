@@ -6,17 +6,25 @@ Content ownership split:
 - AnimationStudio repository: framework logic, templates, tasks, maps, packages.
 - Vault repository: project content resolved through `agent-context/intent/dependencies/vault.md` aliases.
 
+Responsibility split for curriculum commissions:
+
+- CurriculumStudio owns approved lesson knowledge and instructional constraints.
+- AnimationStudio owns production script, visual spec, build, and render.
+- AnimationStudio transforms the closed content contract; it does not research or
+  invent missing subject matter.
+
 ## Purpose
 
 Help move from an idea or rough explanation to a reviewed animation spec, then to an animation project that can be previewed, revised, and rendered.
 
 ## Core Workflow
 
-Script -> Spec -> Build -> Preview -> Render -> Revise
+Idea or Content Brief -> Script -> Spec -> Build -> Preview -> Render -> Revise
 
 ## Principles
 
-- The script says what needs to be explained.
+- For commissioned work, the content brief says what must be taught; the script
+  decides how it is spoken and structured.
 - The spec is the contract between explanation and visuals.
 - The animation project is generated from the reviewed spec.
 - The output is a video or still derived from the project.
