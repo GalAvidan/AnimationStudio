@@ -23,13 +23,17 @@ The user wants to turn a script into an animation spec.
 3. If the script has `[SPEAKER:]` markers, fill in the spec's **Cast** table and use the **Speaker** / **Emotion** columns in the Beat Map. Otherwise leave Cast blank and the Speaker column empty (narrator).
 4. Create a beat map with duration per beat (time on screen, e.g. `6s`, `400ms`). Do not use absolute timeline positions.
 5. Define visual philosophy, key moments, sync points, assets, and constraints.
-6. Exclude code, frame numbers, pixel positions, and component props.
-7. Save to `{projects}/<name>/specs/<variant>.spec.md` using `agent-context/templates/spec.template.md` as the skeleton.
+6. For curriculum commissions, verify the visual philosophy and beat map
+   preserve the script's treatment guardrail mappings. Flag
+   `INSTRUCTIONAL_TREATMENT_MISMATCH` if the visuals teach a different mental
+   model even when narration is factually correct.
+7. Exclude code, frame numbers, pixel positions, and component props.
+8. Save to `{projects}/<name>/specs/<variant>.spec.md` using `agent-context/templates/spec.template.md` as the skeleton.
    - Ensure frontmatter starts with:
      - `status: Draft`
      - `approvedBy:`
      - `approvedDate:`
-8. As the final step, call `update-status` to record:
+9. As the final step, call `update-status` to record:
 	- `phase`: `spec-drafted`
 	- variant update: `specApproved = Draft` for `<variant>`
 	- `next action`: "Run approve-spec after review, then build-animation"

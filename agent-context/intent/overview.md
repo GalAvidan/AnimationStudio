@@ -8,7 +8,8 @@ Content ownership split:
 
 Responsibility split for curriculum commissions:
 
-- CurriculumStudio owns approved lesson knowledge and instructional constraints.
+- CurriculumStudio owns approved lesson knowledge and instructional treatment
+  guardrails.
 - AnimationStudio owns production script, visual spec, build, and render.
 - AnimationStudio transforms the closed content contract; it does not research or
   invent missing subject matter.
@@ -23,8 +24,9 @@ Idea or Content Brief -> Script -> Spec -> Build -> Preview -> Render -> Revise
 
 ## Principles
 
-- For commissioned work, the content brief says what must be taught; the script
-  decides how it is spoken and structured.
+- For commissioned work, the content brief says what must be taught and which
+  teaching interpretation must survive; the script decides how it is spoken and
+  structured.
 - The spec is the contract between explanation and visuals.
 - The animation project is generated from the reviewed spec.
 - The output is a video or still derived from the project.

@@ -23,6 +23,10 @@ approvedDate:
      motion character (calm / energetic / playful), whether diagrams or characters dominate.
      Two to four sentences is enough. -->
 
+<!-- For curriculum commissions, this section must preserve the instructional
+     treatment guardrails from the source script/brief. Visual choices may be
+     original, but they must not teach a different mental model. -->
+
 ---
 
 ## Cast
@@ -86,12 +90,15 @@ approvedDate:
 - Frame rate: 30fps (drafts), 60fps for finals if motion clarity matters
 - Must include: <!-- non-negotiable visual moments -->
 - Must avoid: <!-- things that must not appear -->
+- Treatment guardrails: <!-- curriculum commissions only; list trt-* IDs that
+  the spec must preserve -->
 
 ---
 
 ## Review Checklist
 
 - [ ] Core message lands within the first third of the runtime.
+- [ ] Treatment guardrails are preserved by the visual approach.
 - [ ] Every beat can be understood with audio muted.
 - [ ] No code, frame numbers, or component props appear in this spec.
 - [ ] Sync points are named and timed.
