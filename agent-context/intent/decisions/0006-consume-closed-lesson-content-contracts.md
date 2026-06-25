@@ -12,19 +12,23 @@ Build workflow and blurred responsibility for narration and visual storytelling.
 
 ## Decision
 
-For curriculum commissions, AnimationStudio consumes `as-out` v3 lesson-content
-briefs. The brief is a closed factual boundary containing semantic content beats,
-approved claims, examples, misconceptions, caveats, forbidden claims, and
-acceptance checks.
+For curriculum commissions, AnimationStudio consumes `as-out` v3.1
+lesson-content briefs. The brief is a closed factual and instructional boundary
+containing semantic content beats, instructional treatment guardrails, approved
+claims, examples, misconceptions, caveats, forbidden claims, and acceptance
+checks.
 
 AnimationStudio owns production scripting, visual specification, implementation,
 and rendering. It may creatively transform the content but may not perform
 subject-matter research, resolve missing knowledge, or add unsupported factual
 claims. An incomplete brief is returned as `CONTENT_CONTRACT_INCOMPLETE`.
+A brief or production artifact that teaches against a treatment guardrail is
+returned as `INSTRUCTIONAL_TREATMENT_MISMATCH`.
 
 ## Consequences
 
-- Commissioned scripts trace production beats to approved claim IDs.
+- Commissioned scripts trace production beats to approved claim IDs and
+  treatment guardrail IDs.
 - Intake rejects unsupported contract versions and incomplete v3 briefs.
 - Standalone creative projects may still begin from user ideas; the closed-claim
   rules apply when a curriculum content brief is present.

@@ -13,8 +13,8 @@
 ## Source Content Contract
 
 - **Commission:** <!-- cmsn-NNNN or standalone -->
-- **Brief:** <!-- exact as-out v3 path, or none -->
-- **Contract version:** <!-- 3.0.0 or standalone -->
+- **Brief:** <!-- exact as-out v3.1 path, or none -->
+- **Contract version:** <!-- 3.1.0 or standalone -->
 
 ---
 
@@ -44,15 +44,24 @@ Closing — land the takeaway.
 
 ## Content Traceability
 
-<!-- Required for as-out v3 commissions; remove for standalone projects. -->
+<!-- Required for as-out v3.1 commissions; remove for standalone projects. -->
 
 | Production beat | Content beat(s) | Approved claim(s) | Acceptance check(s) covered |
 |---|---|---|---|
 | production-beat-01 | beat-01-* | clm-*@1.0 | |
 
+## Treatment Traceability
+
+<!-- Required for as-out v3.1 commissions; remove for standalone projects. -->
+
+| Production beat | Treatment guardrail(s) preserved | How the script preserves the teaching interpretation |
+|---|---|---|
+| production-beat-01 | trt-* | |
+
 ## Contract Verification
 
 - [ ] Every factual statement maps to an approved claim.
+- [ ] Every treatment guardrail is preserved.
 - [ ] Every content-beat acceptance check is covered.
 - [ ] Required example is preserved.
 - [ ] Misconception correction lands clearly.
